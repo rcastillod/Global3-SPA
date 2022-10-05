@@ -2,7 +2,7 @@
   <header
     class="backdrop-blur-md w-full top-0 sticky z-10 py-3 border-b border-border-color dark:border-border-color-light"
   >
-    <div class="container mx-auto">
+    <div class="container mx-auto px-4 md:px-0">
       <div class="header-inner flex items-center justify-between">
         <div
           class="header-left flex items-center justify-between md:justify-start lg:basis-[55%] w-full"

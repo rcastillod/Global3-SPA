@@ -1,3 +1,7 @@
 <template>
-  <div>Hello from pages</div>
+  <div class="w-full">
+    <section class="container mx-auto">
+      <LayoutHeroSection />
+    </section>
+  </div>
 </template>
