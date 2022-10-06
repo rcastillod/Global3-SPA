@@ -3,14 +3,16 @@
     <img
       :src="
         $colorMode.value == 'dark'
-          ? 'assets/images/logoAppLight.svg'
-          : 'assets/images/logoAppDark.svg'
+          ? '/static/images/logoAppLight.svg'
+          : '/static/images/logoAppDark.svg'
       "
       alt="Logo Global3"
       width="180"
     />
   </NuxtLink>
 </template>
+
+<script setup></script>
 
 <style scoped>
 .logo::after {
