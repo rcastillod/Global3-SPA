@@ -12,8 +12,12 @@
 </template>
 
 <style>
+html,
 body {
-  @apply bg-primary dark:bg-background-color-light;
+  min-height: 100vh;
+}
+body {
+  @apply bg-primary dark:bg-background-color-light relative;
 }
 body::before {
   content: "";

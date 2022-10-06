@@ -47,8 +47,8 @@ export default {
         scaleElementHovered ? 1 : 0.5
       });
       width: ${this.dotSize * 2}px;
-       height: ${this.dotSize * 2}px;
-       background-color: ${this.dotColor}`;
+      height: ${this.dotSize * 2}px;
+      background-color: ${this.dotColor}`;
     });
   },
 };
