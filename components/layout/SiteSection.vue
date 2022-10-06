@@ -1,5 +1,5 @@
 <template>
-  <div class="py-12 md:py-36">
+  <div class="py-12 md:py-36 px-4 md:px-8">
     <p
       v-if="subtitle"
       :class="subtitleAlignment"
