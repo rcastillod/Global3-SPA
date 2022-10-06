@@ -3,8 +3,8 @@
     <img
       :src="
         $colorMode.value == 'dark'
-          ? '../../assets/images/logoAppLight.svg'
-          : '../../assets/images/logoAppDark.svg'
+          ? 'assets/images/logoAppLight.svg'
+          : 'assets/images/logoAppDark.svg'
       "
       alt="Logo Global3"
       width="180"
