@@ -1,18 +1,23 @@
 <template>
   <NuxtLink to="/" class="logo relative block pr-10 mr-5">
-    <img
-      :src="
-        $colorMode.value == 'dark'
-          ? '/public/images/logoAppLight.svg'
-          : '/public/images/logoAppDark.svg'
-      "
-      alt="Logo Global3"
-      width="180"
-    />
+    <img :src="logoSrc" alt="Logo Global3" width="180" />
   </NuxtLink>
 </template>
 
-<script setup></script>
+<script>
+import logoUrlDark from "~/assets/images/logoAppDark.svg";
+import logoUrlLight from "~/assets/images/logoAppLight.svg";
+export default {
+  computed: {
+    logoSrc() {
+      if (this.$colorMode.value == "dark") {
+        return logoUrlLight;
+      }
+      return logoUrlDark;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .logo::after {
