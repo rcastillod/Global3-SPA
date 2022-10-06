@@ -4,8 +4,8 @@
       <NuxtPage />
       <ElementsCustomCursor
         scaleElement="logo"
-        dotColor="rgba(255,255,255, 0.8)"
-        borderColor="rgba(255,255,255, 0.8)"
+        dotColor="#FF6100"
+        borderColor="#FF6100"
       />
     </NuxtLayout>
   </div>
