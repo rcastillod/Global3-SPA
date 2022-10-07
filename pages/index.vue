@@ -1,11 +1,14 @@
 <template>
   <div class="w-full">
+    <!-- Hero Section -->
     <section class="w-full">
       <LayoutHeroSection />
     </section>
+    <!-- Divider -->
     <section class="max-w-screen-2xl mx-auto">
       <ElementsSectionDivider />
     </section>
+    <!-- Services -->
     <section class="w-full">
       <LayoutSiteSection subtitle="Que es lo que ofrecemos">
         <LayoutServicesTitle
@@ -30,10 +33,21 @@
         </div>
       </LayoutSiteSection>
     </section>
+    <!-- Text Marquee -->
     <section class="w-full">
       <ElementsTextMarquee
         :texts="['Soluciones', 'Digitalización', 'Trabajo en Equipo']"
       />
+    </section>
+    <!-- Proyects -->
+    <section
+      class="bg-grayscale w-full bg-[url('~/assets/images/bg-proyects.jpg')] bg-cover bg-no-repeat bg-center"
+    >
+      <LayoutSiteSection class="flex justify-center md:justify-start">
+        <ElementsButtonTextAnim
+          text="Ver Proyectos - Ver Proyectos - Ver Proyectos"
+        />
+      </LayoutSiteSection>
     </section>
   </div>
 </template>
