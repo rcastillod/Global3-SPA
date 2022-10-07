@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-x-3 gap-y-5 flex-wrap mt-14">
+  <div class="flex gap-0 md:gap-x-3 md:gap-y-5 flex-wrap mt-14">
     <h2
       v-for="(service, index) in services"
       :key="index"
@@ -23,6 +23,6 @@ export default {
 
 <style scoped>
 .service-title {
-  font-size: clamp(2rem, 5vw, 2.9rem);
+  font-size: clamp(2.2rem, 5vw, 2.9rem);
 }
 </style>

@@ -20,7 +20,7 @@
           ]"
         />
         <div
-          class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-14 mt-36"
+          class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-14 mt-14 md:mt-36"
         >
           <LayoutServiceCard
             v-for="(service, index) in services"
