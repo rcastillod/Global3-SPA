@@ -4,17 +4,10 @@
   >
     <div clas="card-inner">
       <div class="card-icon">
-        <img
+        <ElementsImageBlur
           :src="service.icon"
           :alt="service.title"
-          width="70"
-          class="absolute z-[1] -top-8 right-4 md:-right-4"
-        />
-        <img
-          :src="service.icon"
-          :alt="service.title"
-          width="70"
-          class="absolute -top-5 right-1 md:-right-7 blur-lg -z-[1px] opacity-40"
+          :width="70"
         />
       </div>
       <div class="card-title mb-5">

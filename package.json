@@ -13,5 +13,8 @@
     "install": "^0.13.0",
     "npm": "^8.19.2",
     "nuxt": "3.0.0-rc.11"
+  },
+  "dependencies": {
+    "swiper": "^8.4.3"
   }
 }

@@ -49,6 +49,12 @@
         />
       </LayoutSiteSection>
     </section>
+    <!-- Testimonials -->
+    <section>
+      <LayoutSiteSection>
+        <LayoutTestimonials />
+      </LayoutSiteSection>
+    </section>
   </div>
 </template>
 
