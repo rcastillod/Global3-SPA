@@ -3,7 +3,7 @@
     <h2
       v-for="(service, index) in services"
       :key="index"
-      class="font-arimo uppercase text-white dark:text-primary text-5xl tracking-wide font-light"
+      class="service-title font-arimo uppercase text-white dark:text-primary tracking-wide font-light"
     >
       {{ service }} /
     </h2>
@@ -20,3 +20,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.service-title {
+  font-size: clamp(2rem, 5vw, 2.9rem);
+}
+</style>

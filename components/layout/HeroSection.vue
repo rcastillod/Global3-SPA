@@ -1,5 +1,5 @@
 <template>
-  <div class="py-20 px-4 md:px-8 md:py-36">
+  <div class="max-w-screen-2xl mx-auto py-20 px-4 md:px-8 md:py-36">
     <h1 class="hero-title font-bold lg:text-center">Creamos</h1>
     <div class="max-w-screen-lg mx-auto md:-mt-12 lg:-mt-16">
       <div class="flex flex-col lg:flex-row items-center">

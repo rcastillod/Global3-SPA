@@ -1,20 +1,20 @@
 <template>
   <div
-    class="card py-20 px-8 bg-white/5 dark:bg-white rounded-xl relative hover:py-10 transition-all ease-in-out duration-700 group"
+    class="card py-20 px-8 bg-white/5 dark:bg-white rounded-xl relative transition-all ease-in-out duration-700 group"
   >
     <div clas="card-inner">
       <div class="card-icon">
         <img
           :src="service.icon"
           :alt="service.title"
-          width="90"
-          class="absolute z-10 -top-8 -right-4"
+          width="70"
+          class="absolute z-[1] -top-8 right-4 md:-right-4"
         />
         <img
           :src="service.icon"
           :alt="service.title"
-          width="90"
-          class="absolute z-10 -top-5 -right-7 blur-lg -z-[1px] opacity-40"
+          width="70"
+          class="absolute -top-5 right-1 md:-right-7 blur-lg -z-[1px] opacity-40"
         />
       </div>
       <div class="card-title mb-5">
@@ -31,9 +31,22 @@
       </div>
       <nuxt-link
         to="/"
-        class="absolute bottom-3 left-8 opacity-0 group-hover:opacity-100 transform -translate-y-10 group-hover:-translate-y-2 transition-all duration-1000 ease-in-out"
-        >hola</nuxt-link
-      >
+        class="absolute bottom-7 right-8 text-white group-hover:text-orange-2 transition-all duration-1000 ease-in-out"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+          />
+        </svg>
+      </nuxt-link>
     </div>
   </div>
 </template>

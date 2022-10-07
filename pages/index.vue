@@ -1,12 +1,12 @@
 <template>
   <div class="w-full">
-    <section class="container mx-auto">
+    <section class="w-full">
       <LayoutHeroSection />
     </section>
-    <section class="container mx-auto">
+    <section class="max-w-screen-2xl mx-auto">
       <ElementsSectionDivider />
     </section>
-    <section class="max-w-screen-lg mx-auto">
+    <section class="w-full">
       <LayoutSiteSection subtitle="Que es lo que ofrecemos">
         <LayoutServicesTitle
           :services="[
@@ -19,7 +19,9 @@
             'SEO',
           ]"
         />
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 gap-y-14">
+        <div
+          class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-14 mt-36"
+        >
           <LayoutServiceCard
             v-for="(service, index) in services"
             :key="index"
@@ -27,6 +29,11 @@
           />
         </div>
       </LayoutSiteSection>
+    </section>
+    <section class="w-full">
+      <ElementsTextMarquee
+        :texts="['Soluciones', 'Digitalización', 'Trabajo en Equipo']"
+      />
     </section>
   </div>
 </template>
@@ -84,7 +91,7 @@ export default {
         {
           id: 6,
           title: "Community Manager",
-          icon: "../assets/images/appdev.png",
+          icon: "../assets/images/community.png",
           excerpt:
             "En Global3 nos preocupamos por hacer visibles a nuestros clientes y es por este motivo que nuestras estrategias en administración de redes sociales incrementan las interacciones.",
           description:
