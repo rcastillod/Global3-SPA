@@ -50,9 +50,19 @@
       </LayoutSiteSection>
     </section>
     <!-- Testimonials -->
-    <section>
+    <section class="w-full">
       <LayoutSiteSection>
         <LayoutTestimonials />
+      </LayoutSiteSection>
+    </section>
+    <!-- Business -->
+    <section class="w-full">
+      <LayoutSiteSection
+        :full="true"
+        subtitle="Hemos trabajado con"
+        subtitleAlign="center"
+      >
+        <LayoutBusiness />
       </LayoutSiteSection>
     </section>
   </div>

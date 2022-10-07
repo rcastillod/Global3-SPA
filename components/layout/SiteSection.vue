@@ -1,5 +1,8 @@
 <template>
-  <div class="max-w-screen-xl mx-auto py-20 md:py-36 px-4 md:px-8">
+  <div
+    class="mx-auto py-20 md:py-36"
+    :class="full == true ? 'w-full p-0' : 'max-w-screen-xl px-4 md:px-8'"
+  >
     <p
       v-if="subtitle"
       :class="subtitleAlignment"
@@ -21,6 +24,9 @@
 <script>
 export default {
   props: {
+    full: {
+      type: Boolean,
+    },
     subtitle: {
       type: String,
       required: false,

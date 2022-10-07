@@ -3,5 +3,5 @@
   <main>
     <slot />
   </main>
-  <!-- <FooterApp /> -->
+  <FooterApp />
 </template>
