@@ -13,6 +13,18 @@
 
 <style>
 /* -------------------------------------------------------------------------- */
+/*                               TANSITION PAGE                               */
+/* -------------------------------------------------------------------------- */
+/* .layout-enter-active,
+.layout-leave-active {
+  transition: all 0.4s;
+}
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+} */
+/* -------------------------------------------------------------------------- */
 /*                                   GLOBAL                                   */
 /* -------------------------------------------------------------------------- */
 html,
@@ -34,7 +46,14 @@ body::before {
   opacity: 0.05;
 }
 
-/* .bg-grayscale {
-  filter: grayscale(100%);
-} */
+/* Page Header */
+.page-header::after {
+  @apply bg-gradient-to-t from-primary dark:from-background-color-light;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 30%;
+  width: 100%;
+}
 </style>

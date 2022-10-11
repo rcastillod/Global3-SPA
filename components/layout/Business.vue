@@ -9,14 +9,27 @@
 </template>
 
 <script>
-import logo1 from "~/assets/images/logo1.svg";
-import logo2 from "~/assets/images/logo2.svg";
-import logo3 from "~/assets/images/logo3.svg";
-import logo4 from "~/assets/images/logo4.svg";
+import logo1 from "~/assets/images/logo1l.svg";
+import logo2 from "~/assets/images/logo2l.svg";
+import logo3 from "~/assets/images/logo3l.svg";
+import logo4 from "~/assets/images/logo4l.svg";
 export default {
   computed: {
     logos() {
-      return [logo1, logo2, logo3, logo4, logo1, logo2, logo3, logo4];
+      return [
+        logo1,
+        logo2,
+        logo3,
+        logo4,
+        logo1,
+        logo2,
+        logo3,
+        logo4,
+        logo1,
+        logo2,
+        logo3,
+        logo4,
+      ];
     },
   },
 };
