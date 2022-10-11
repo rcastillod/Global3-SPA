@@ -77,7 +77,7 @@ export default {
         {
           id: 1,
           title: "Desarrollo Web",
-          icon: "../assets/images/webdev.png",
+          icon: "/webdev.png",
           excerpt:
             "Una de las principales herramientas para hacernos visibles ante nuestros clientes en el mundo digital es una página WEB.",
           description:
@@ -86,7 +86,7 @@ export default {
         {
           id: 2,
           title: "Diseño",
-          icon: "../assets/images/design.png",
+          icon: "/design.png",
           excerpt:
             "Una de las principales herramientas para hacernos visibles ante nuestros clientes en el mundo digital es una página WEB.",
           description:
@@ -95,7 +95,7 @@ export default {
         {
           id: 3,
           title: "Intranet",
-          icon: "../assets/images/intranet.png",
+          icon: "/intranet.png",
           excerpt:
             "Nuestro equipo de desarrolladores se preocupa de la mejora de procesos y gestión de la información de nuestros clientes.",
           description:
@@ -104,7 +104,7 @@ export default {
         {
           id: 4,
           title: "Ecommerce",
-          icon: "../assets/images/ecommerce.png",
+          icon: "/ecommerce.png",
           excerpt:
             "Nuestras soluciones de integración de sistemas de compra en línea involucran altos estándares de seguridad.",
           description:
@@ -113,7 +113,7 @@ export default {
         {
           id: 5,
           title: "Aplicaciones Móviles",
-          icon: "../assets/images/appdev.png",
+          icon: "/appdev.png",
           excerpt:
             "Las aplicaciones móviles llegaron para quedarse y es por eso que Global3 se preocupa de entregar aplicaciones totalmente adaptables a la realidad del cliente y mercado.",
           description:
@@ -122,7 +122,7 @@ export default {
         {
           id: 6,
           title: "Community Manager",
-          icon: "../assets/images/community.png",
+          icon: "/community.png",
           excerpt:
             "En Global3 nos preocupamos por hacer visibles a nuestros clientes y es por este motivo que nuestras estrategias en administración de redes sociales incrementan las interacciones.",
           description:
@@ -131,7 +131,7 @@ export default {
         {
           id: 7,
           title: "SEO",
-          icon: "../assets/images/seo.png",
+          icon: "/seo.png",
           excerpt:
             "Nuestra experiencia y equipo de desarrolladores permiten generar estrategias personalizadas para mejorar la visibilidad de tu sitio.",
           description:

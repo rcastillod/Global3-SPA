@@ -57,14 +57,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>
-
-<!-- <script setup>
-// Define params wherever, through `defineProps()`, `useRoute()`, etc.
-const { data: services } = await useFetch("/services.json");
-// const { data: service, refresh } = await useAsyncData("service", () =>
-//   $fetch("/services.json")
-// );
-console.log(services);
-</script> -->
