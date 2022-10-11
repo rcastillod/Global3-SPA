@@ -59,6 +59,7 @@
     <section class="w-full">
       <LayoutSiteSection
         :full="true"
+        spacingBottom="pb-0 md:pb-0"
         subtitle="Hemos trabajado con"
         subtitleAlign="center"
       >

@@ -1,14 +1,10 @@
 <template>
   <div
-    class="flex gap-14 md:gap-52 overflow-hidden whitespace-nowrap py-5 mt-14 border-y border-border-color dark:border-border-color-light"
+    class="flex overflow-hidden py-5 mt-14 border-y border-border-color dark:border-border-color-light"
   >
-    <img
-      v-for="logo in logos"
-      :src="logo"
-      class="anim-wrapper"
-      alt=""
-      width="100"
-    />
+    <div class="anim-wrapper flex whitespace-nowrap relative gap-14 md:gap-52">
+      <img v-for="logo in logos" :src="logo" alt="" width="100" class="" />
+    </div>
   </div>
 </template>
 
@@ -28,15 +24,16 @@ export default {
 
 <style scoped>
 .anim-wrapper {
-  animation: logo-marquee-right 10s linear infinite;
+  animation: logo-marquee-right 57s linear infinite;
   padding-right: 1.5625rem;
+  transform: translate3d(0%, 0, 0);
 }
 @keyframes logo-marquee-right {
   0% {
-    transform: translateX(-100%);
+    transform: translate3d(0%, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 </style>

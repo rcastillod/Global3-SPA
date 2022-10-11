@@ -1,8 +1,9 @@
 <template>
   <div
     class="flex gap-5 font arimo uppercase text-white dark:text-primary overflow-hidden whitespace-nowrap py-5 border-y border-border-color dark:border-border-color-light"
+    :class="{ bordered: bordered }"
   >
-    <div v-for="n in 3" class="anim-wrapper">
+    <div v-for="n in 3" class="anim-wrapper" :class="direction">
       <span v-for="(text, index) in listDash" :key="index" class="text">{{
         text
       }}</span>
@@ -15,6 +16,14 @@ export default {
   props: {
     texts: {
       type: Array,
+    },
+    direction: {
+      type: String,
+      default: "right",
+    },
+    bordered: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -36,12 +45,32 @@ export default {
 
 <style scoped>
 .anim-wrapper {
-  animation: text-marquee-right 25s linear infinite;
-  padding-right: 1.5625rem;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.anim-wrapper.right {
+  animation-name: text-marquee-right;
+}
+.anim-wrapper.left {
+  animation-name: text-marquee-left;
 }
 .text {
   font-size: clamp(4rem, 5vw, 8rem);
   line-height: 1em;
+}
+.bordered .text {
+  color: #ffffff00;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff;
+}
+@keyframes text-marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 @keyframes text-marquee-right {
   0% {
