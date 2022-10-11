@@ -60,9 +60,14 @@ export default {
   line-height: 1em;
 }
 .bordered .text {
-  color: #ffffff00;
+  color: rgba(255, 255, 255, 0);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ffffff;
+}
+.dark .bordered .text {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #131313;
 }
 @keyframes text-marquee-left {
   0% {

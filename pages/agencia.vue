@@ -101,11 +101,11 @@ definePageMeta({ layout: "page" });
   z-index: 2;
 }
 .marquee-wrapper::before {
-  @apply bg-gradient-to-r from-primary;
+  @apply bg-gradient-to-r from-primary dark:from-background-color-light;
   left: 0;
 }
 .marquee-wrapper::after {
-  @apply bg-gradient-to-l from-primary;
+  @apply bg-gradient-to-l from-primary dark:from-background-color-light;
   right: 0;
 }
 </style>

@@ -19,7 +19,7 @@
       </div>
       <div class="card-description">
         <p class="text-grey-dark dark:text-grey-light">
-          {{ service.excerpt }}
+          {{ description == true ? service.description : service.excerpt }}
         </p>
       </div>
       <nuxt-link
@@ -49,6 +49,10 @@ export default {
   props: {
     service: {
       type: Object,
+    },
+    description: {
+      type: Boolean,
+      default: false,
     },
   },
 };
