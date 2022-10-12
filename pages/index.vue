@@ -57,14 +57,10 @@
     </section>
     <!-- Business -->
     <section class="w-full">
-      <LayoutSiteSection
-        :full="true"
-        spacingBottom="pb-0 md:pb-0"
-        subtitle="Hemos trabajado con"
-        subtitleAlign="center"
-      >
-        <LayoutBusiness />
-      </LayoutSiteSection>
+      <p class="text-grey-dark dark:text-grey-light text-xl text-center">
+        Hemos trabajado con
+      </p>
+      <LayoutBusiness />
     </section>
   </div>
 </template>
