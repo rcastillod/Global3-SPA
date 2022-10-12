@@ -15,7 +15,11 @@ export default defineNuxtConfig({
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@pinia/nuxt'],
+  modules: [
+    '@nuxtjs/tailwindcss', 
+    '@nuxtjs/color-mode', 
+    '@pinia/nuxt',
+  ],
   tailwindcss: {
     cssPath: '~/assets/ss/tailwind.css',
     configPath: 'tailwind.config.js',

@@ -87,9 +87,11 @@
     </section>
   </div>
 </template>
+
 <script>
 definePageMeta({ layout: "page" });
 </script>
+
 <style>
 .page-header {
   background-image: url("/header.png");

@@ -5,7 +5,7 @@
     <div class="card-inner">
       <div class="card-image w-full h-52">
         <ElementsSectionImage
-          img="/bg-proyects.jpg"
+          :img="projectImage === null ? '/bg-proyects.jpg' : projectImage"
           class="rounded-md object-cover w-full h-full"
         />
       </div>
@@ -13,19 +13,23 @@
         <div
           class="text-xl text-white dark:text-primary transition-colors duration-300 ease-in-out group-hover:text-orange-2"
         >
-          Nombre del proyecto
+          {{ project.title.rendered }}
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    proyect: {
-      type: Object,
-    },
+<script setup>
+import { computed } from "vue";
+
+const props = defineProps({
+  project: {
+    type: Object,
   },
-};
+});
+
+const projectImage = computed(() => {
+  return props.project.acf.imagen.sizes.large;
+});
 </script>
