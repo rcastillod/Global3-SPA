@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <!-- Hero Section -->
-    <section class="w-full">
+    <section class="w-full" data-aos="fade-up" data-aos-duration="1000">
       <LayoutHeroSection />
     </section>
     <!-- Divider -->
