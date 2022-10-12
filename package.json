@@ -10,6 +10,7 @@
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.1.7",
     "@nuxtjs/tailwindcss": "^5.3.3",
+    "@pinia/nuxt": "^0.4.3",
     "install": "^0.13.0",
     "npm": "^8.19.2",
     "nuxt": "3.0.0-rc.11"

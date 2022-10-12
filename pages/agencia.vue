@@ -80,6 +80,9 @@
     </section>
     <!-- Business -->
     <section class="w-full">
+      <p class="text-grey-dark dark:text-grey-light text-xl text-center">
+        Hemos trabajado con
+      </p>
       <LayoutBusiness />
     </section>
   </div>

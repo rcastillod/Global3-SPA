@@ -41,7 +41,7 @@
     </section>
     <!-- Proyects -->
     <section
-      class="bg-grayscale w-full bg-[url('~/assets/images/bg-proyects.jpg')] bg-cover bg-no-repeat bg-center"
+      class="bg-grayscale w-full bg-[url('/bg-proyects.jpg')] bg-cover bg-no-repeat bg-center"
     >
       <LayoutSiteSection class="flex justify-center md:justify-start">
         <ElementsButtonTextAnim

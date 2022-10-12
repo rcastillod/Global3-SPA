@@ -13,7 +13,7 @@
     <h3
       v-if="title"
       :class="titleAlignment"
-      class="text-white dark:text-primary text-4xl font-arimo uppercase mt-8 tracking-wider"
+      class="text-white dark:text-primary text-4xl font-arimo uppercase mt-5 tracking-wider"
     >
       {{ title }}
     </h3>

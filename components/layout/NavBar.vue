@@ -19,9 +19,9 @@
         >Servicios</NuxtLink
       >
       <NuxtLink
-        to="/clientes"
+        to="/proyectos"
         class="block text-grey-dark dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-white transition-all ease-in-out duration-300"
-        >Clientes</NuxtLink
+        >Proyectos</NuxtLink
       >
       <NuxtLink
         to="/"
