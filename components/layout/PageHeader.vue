@@ -4,13 +4,11 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    pageTitle: {
-      type: String,
-      required: true,
-    },
+<script setup>
+const props = defineProps({
+  pageTitle: {
+    type: String,
+    required: true,
   },
-};
+});
 </script>

@@ -34,23 +34,23 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    text: {
-      type: String,
-      required: true,
-    },
+<script setup>
+import { computed } from "vue";
+
+const props = defineProps({
+  text: {
+    type: String,
+    required: true,
   },
-  computed: {
-    textSplit() {
-      let text = this.text;
-      let splited = text.split("");
-      return splited;
-    },
-  },
-};
+});
+
+const textSplit = computed(() => {
+  let text = props.text;
+  let splited = text.split("");
+  return splited;
+});
 </script>
+
 <style scoped>
 .text {
   animation: textRotate 10s linear infinite;

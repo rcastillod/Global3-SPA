@@ -11,36 +11,35 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    texts: {
-      type: Array,
-    },
-    direction: {
-      type: String,
-      default: "right",
-    },
-    bordered: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  computed: {
-    listDash() {
-      let listArr = this.texts;
-      let dashEl = "-";
-      let between = 1;
+<script setup>
+import { computed } from "vue";
 
-      const newListArr = listArr.reduce((list, elem, i) => {
-        list.push(elem);
-        if ((i + 1) % between === 0) list.push(dashEl);
-        return list;
-      }, []);
-      return newListArr;
-    },
+const props = defineProps({
+  texts: {
+    type: Array,
   },
-};
+  direction: {
+    type: String,
+    default: "right",
+  },
+  bordered: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const listDash = computed(() => {
+  let listArr = props.texts;
+  let dashEl = "-";
+  let between = 1;
+
+  const newListArr = listArr.reduce((list, elem, i) => {
+    list.push(elem);
+    if ((i + 1) % between === 0) list.push(dashEl);
+    return list;
+  }, []);
+  return newListArr;
+});
 </script>
 
 <style scoped>

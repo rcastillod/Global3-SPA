@@ -2,7 +2,7 @@
   <div class="grid grid-cols-4">
     <div class="hidden md:flex relative col-span-1 items-center justify-center">
       <ElementsImageBlur
-        :src="quoteImage"
+        :src="quoteImageSrc"
         alt="Quote"
         position="relative"
         width="150"
@@ -25,7 +25,10 @@
       @swiper="onSwiper"
       @slideChange="onSlideChange"
     >
-      <swiper-slide v-for="(text, index) in swiperTextBase" :key="index">
+      <swiper-slide
+        v-for="(text, index) in storeTestimonials.testimonials"
+        :key="index"
+      >
         <div>
           <p class="text-white dark:text-primary text-md md:text-xl mb-5">
             {{ text.testimonio }}
@@ -39,46 +42,23 @@
     </swiper>
   </div>
 </template>
-<script>
+<script setup>
+import { ref, computed } from "vue";
+import { testimonialStore } from "~/stores/testimonials";
 import quoteImage from "~/assets/images/quote.png";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import { ref } from "vue";
 
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  computed: {
-    quoteImage() {
-      return quoteImage;
-    },
-  },
-  setup() {
-    const swiperTextBase = ref([
-      {
-        testimonio:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque sollicitudin tempor nullam risus nulla. Pellentesque tortor aliquet curabitur suscipit amet. Integer arcu sit pellentesque arcu. Lacus viverra tortor dolor sed. Nibh nunc venenatis risus id.",
-        name: "Evan You",
-      },
-      {
-        testimonio:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque sollicitudin tempor nullam risus nulla. Pellentesque tortor aliquet curabitur suscipit amet. Integer arcu sit pellentesque arcu. Lacus viverra tortor dolor sed. Nibh nunc venenatis risus id.",
-        name: "Felipe Morales",
-      },
-      {
-        testimonio:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque sollicitudin tempor nullam risus nulla. Pellentesque tortor aliquet curabitur suscipit amet. Integer arcu sit pellentesque arcu. Lacus viverra tortor dolor sed. Nibh nunc venenatis risus id.",
-        name: "Rodrigo Castillo",
-      },
-    ]);
-    return { modules: [Pagination, Autoplay], swiperTextBase };
-  },
-};
+const quoteImageSrc = computed(() => {
+  return quoteImage;
+});
+
+const modules = computed(() => [Pagination, Autoplay]);
+
+const storeTestimonials = testimonialStore();
 </script>
 
 <style>

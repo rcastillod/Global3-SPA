@@ -11,26 +11,24 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    src: {
-      type: String,
-      required: true,
-    },
-    alt: {
-      type: String,
-      required: true,
-    },
-    position: {
-      type: String,
-    },
-    width: {
-      type: [String, Number],
-      required: true,
-    },
+<script setup>
+const props = defineProps({
+  src: {
+    type: String,
+    required: true,
   },
-};
+  alt: {
+    type: String,
+    required: true,
+  },
+  position: {
+    type: String,
+  },
+  width: {
+    type: [String, Number],
+    required: true,
+  },
+});
 </script>
 
 <style scoped>

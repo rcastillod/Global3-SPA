@@ -44,16 +44,14 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    service: {
-      type: Object,
-    },
-    description: {
-      type: Boolean,
-      default: false,
-    },
+<script setup>
+const props = defineProps({
+  service: {
+    type: Object,
   },
-};
+  description: {
+    type: Boolean,
+    default: false,
+  },
+});
 </script>

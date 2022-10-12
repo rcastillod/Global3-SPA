@@ -39,13 +39,9 @@
   </nav>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      open: false,
-      dropdownNavbar: false,
-    };
-  },
-};
+<script setup>
+import { ref } from "vue";
+
+const open = ref(false);
+const dropdownNavbar = ref(false);
 </script>

@@ -21,44 +21,44 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    full: {
-      type: Boolean,
-    },
-    subtitle: {
-      type: String,
-      required: false,
-    },
-    subtitleAlign: {
-      type: String,
-      required: false,
-    },
-    title: {
-      type: String,
-      required: false,
-    },
-    titleAlign: {
-      type: String,
-      required: false,
-    },
+<script setup>
+import { computed } from "vue";
+
+const props = defineProps({
+  full: {
+    type: Boolean,
   },
-  computed: {
-    subtitleAlignment() {
-      if (this.subtitleAlign == "center") {
-        return "text-center";
-      } else if (this.subtitleAlign == "right") {
-        return "text-right";
-      }
-    },
-    titleAlignment() {
-      if (this.titleAlign == "center") {
-        return "text-center";
-      } else if (this.titleAlign == "right") {
-        return "text-right";
-      }
-    },
+  subtitle: {
+    type: String,
+    required: false,
   },
-};
+  subtitleAlign: {
+    type: String,
+    required: false,
+  },
+  title: {
+    type: String,
+    required: false,
+  },
+  titleAlign: {
+    type: String,
+    required: false,
+  },
+});
+
+const subtitleAlignment = computed(() => {
+  if (props.subtitleAlign == "center") {
+    return "text-center";
+  } else if (props.subtitleAlign == "right") {
+    return "text-right";
+  }
+});
+
+const titleAlignment = computed(() => {
+  if (props.titleAlign == "center") {
+    return "text-center";
+  } else if (props.titleAlign == "right") {
+    return "text-right";
+  }
+});
 </script>

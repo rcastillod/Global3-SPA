@@ -10,15 +10,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    services: {
-      type: Array,
-      required: true,
-    },
+<script setup>
+const props = defineProps({
+  services: {
+    type: Array,
+    required: true,
   },
-};
+});
 </script>
 
 <style scoped>

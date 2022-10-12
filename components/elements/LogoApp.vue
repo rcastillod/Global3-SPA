@@ -4,17 +4,17 @@
   </NuxtLink>
 </template>
 
-<script>
+<script setup>
+import { computed } from "vue";
 import logoUrlDark from "~/assets/images/logoAppDark.svg";
 import logoUrlLight from "~/assets/images/logoAppLight.svg";
-export default {
-  computed: {
-    logoSrc() {
-      if (this.$colorMode.value == "dark") {
-        return logoUrlLight;
-      }
-      return logoUrlDark;
-    },
-  },
-};
+
+const colorMode = useColorMode();
+
+const logoSrc = computed(() => {
+  if (colorMode.preference == "dark") {
+    return logoUrlLight;
+  }
+  return logoUrlDark;
+});
 </script>
