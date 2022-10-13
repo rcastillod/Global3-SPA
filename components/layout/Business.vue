@@ -2,7 +2,7 @@
   <div
     class="flex overflow-hidden py-16 mt-14 border-y border-border-color dark:border-border-color-light"
   >
-    <!-- <div class="clients flex relative overflow-hidden select-none">
+    <div class="clients flex relative overflow-hidden select-none">
       <div class="anim-wrapper flex shrink-0 justify-around min-w-full">
         <div v-for="client in storeClients.clients" :key="client.id">
           <img
@@ -19,7 +19,7 @@
           />
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 

@@ -8,7 +8,7 @@ export const projectStore = defineStore('projects', {
   actions: {
     async setProjects() {
       try {
-        const { data, pending } = await useFetch('https://v2.global3.cl/wp-json/wp/v2/proyectos?page=1&per_page=20&_embed=1?_fields=acf&acf_format=standard')
+        const { data, pending } = await useFetch('http://global3headless.local/wp-json/wp/v2/proyectos?page=1&per_page=20&_embed=1?_fields=acf&acf_format=standard')
         const projectsFields = data.value.map(({ id, slug, title, acf }) => ({
           id,
           slug,
