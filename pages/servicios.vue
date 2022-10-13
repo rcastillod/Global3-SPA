@@ -32,4 +32,6 @@ import { servicesStore } from "~/stores/services";
 definePageMeta({ layout: "page" });
 
 const storeServices = servicesStore();
+// Call servicesStore action
+storeServices.setServices();
 </script>

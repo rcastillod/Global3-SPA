@@ -11,17 +11,7 @@
     <!-- Services -->
     <section class="w-full">
       <LayoutSiteSection subtitle="Que es lo que ofrecemos">
-        <LayoutServicesTitle
-          :services="[
-            'Desarrollo Web',
-            'Diseño',
-            'Intranet',
-            'Ecommerce',
-            'Aplicaciones Moviles',
-            'Community Manager',
-            'SEO',
-          ]"
-        />
+        <LayoutServicesTitle :services="storeServices.services" />
         <div
           class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-14 mt-14 md:mt-36"
         >
@@ -63,10 +53,14 @@
       <LayoutBusiness />
     </section>
   </div>
+  <span>{{ servTitles }}</span>
 </template>
 
 <script setup>
+import { computed } from "vue";
 import { servicesStore } from "~/stores/services";
 
 const storeServices = servicesStore();
+// Call servicesStore action
+storeServices.setServices();
 </script>

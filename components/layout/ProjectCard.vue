@@ -5,7 +5,7 @@
     <div class="card-inner">
       <div class="card-image w-full h-52">
         <ElementsSectionImage
-          :img="projectImage === null ? '/bg-proyects.jpg' : projectImage"
+          :img="projectImage"
           class="rounded-md object-cover w-full h-full"
         />
       </div>
@@ -30,6 +30,11 @@ const props = defineProps({
 });
 
 const projectImage = computed(() => {
-  return props.project.acf.imagen.sizes.large;
+  //const registros = Object.keys(props.project.acf.imagen.sizes);
+  if (props.project.acf.imagen != false) {
+    return props.project.acf.imagen.sizes.large;
+  } else {
+    return "/bg-proyects.jpg";
+  }
 });
 </script>

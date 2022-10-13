@@ -5,7 +5,7 @@
       :key="index"
       class="service-title font-arimo uppercase text-white dark:text-primary tracking-wide font-medium"
     >
-      {{ service }} /
+      {{ service.title.rendered }} /
     </h2>
   </div>
 </template>

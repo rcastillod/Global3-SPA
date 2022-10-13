@@ -5,8 +5,8 @@
     <div clas="card-inner">
       <div class="card-icon">
         <ElementsImageBlur
-          :src="service.icon"
-          :alt="service.title"
+          :src="service.acf.icono"
+          :alt="service.title.rendered"
           :width="70"
         />
       </div>
@@ -14,12 +14,16 @@
         <div
           class="text-xl text-white dark:text-primary transition-colors duration-300 ease-in-out group-hover:text-orange-2"
         >
-          {{ service.title }}
+          {{ service.title.rendered }}
         </div>
       </div>
       <div class="card-description">
         <p class="text-grey-dark dark:text-grey-light">
-          {{ description == true ? service.description : service.excerpt }}
+          {{
+            description == true
+              ? service.content.rendered
+              : service.excerpt.rendered
+          }}
         </p>
       </div>
       <nuxt-link
