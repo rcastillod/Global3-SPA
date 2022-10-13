@@ -1,39 +1,32 @@
 <template>
   <div
-    class="flex overflow-hidden py-5 mt-14 border-y border-border-color dark:border-border-color-light"
+    class="flex overflow-hidden py-16 mt-14 border-y border-border-color dark:border-border-color-light"
   >
     <div class="anim-wrapper flex whitespace-nowrap relative gap-14 md:gap-52">
-      <img v-for="logo in logos" :src="logo" alt="" width="100" class="" />
+      <div
+        v-for="client in storeClients.clients"
+        :key="client.id"
+        class="w-[180px]"
+      >
+        <img :src="client.acf.logo.sizes.large" :alt="client.title.rendered" />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { clientStore } from "~/stores/clients";
 import { computed } from "vue";
-import logo1 from "~/assets/images/logo1l.svg";
-import logo2 from "~/assets/images/logo2l.svg";
-import logo3 from "~/assets/images/logo3l.svg";
-import logo4 from "~/assets/images/logo4l.svg";
 
-const logos = computed(() => [
-  logo1,
-  logo2,
-  logo3,
-  logo4,
-  logo1,
-  logo2,
-  logo3,
-  logo4,
-  logo1,
-  logo2,
-  logo3,
-  logo4,
-]);
+const storeClients = clientStore();
+
+// call clientStore action
+storeClients.setClients();
 </script>
 
 <style scoped>
 .anim-wrapper {
-  animation: logo-marquee-right 57s linear infinite;
+  animation: logo-marquee-right 100s linear infinite;
   padding-right: 1.5625rem;
   transform: translate3d(0%, 0, 0);
 }
