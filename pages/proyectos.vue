@@ -8,7 +8,6 @@
         title="Últimos proyectos"
       >
         <div class="proyectos grid grid-cols-5 gap-8 mt-14">
-          <!-- <LayoutProjectCard v-for="n in 15" /> -->
           <LayoutProjectCard
             v-for="project in storeProjects.projects"
             :key="project.id"

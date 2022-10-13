@@ -30,7 +30,6 @@ const props = defineProps({
 });
 
 const projectImage = computed(() => {
-  //const registros = Object.keys(props.project.acf.imagen.sizes);
   if (props.project.acf.imagen != false) {
     return props.project.acf.imagen.sizes.large;
   } else {

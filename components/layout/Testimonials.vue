@@ -31,11 +31,11 @@
       >
         <div>
           <p class="text-white dark:text-primary text-md md:text-xl mb-5">
-            {{ text.testimonio }}
+            {{ text.content.rendered }}
           </p>
           <span
             class="text-grey-dark dark:text-grey-light uppercase font-arimo tracking-wide italic"
-            >{{ text.name }}</span
+            >{{ text.title.rendered }}</span
           >
         </div>
       </swiper-slide>
@@ -59,6 +59,8 @@ const quoteImageSrc = computed(() => {
 const modules = computed(() => [Pagination, Autoplay]);
 
 const storeTestimonials = testimonialStore();
+// Call testimonialStore action
+storeTestimonials.setTestimonials();
 </script>
 
 <style>
