@@ -7,11 +7,19 @@ export const testimonialStore = defineStore('testimonials', {
   actions: {
     async setTestimonials() {
       try {
-        const { data } = await useFetch('http://global3headless.local/wp-json/wp/v2/testimonios?page=1&per_page=100&_embed=1')
-        const testimonialFields = data.value.map(({ id, title, content }) => ({
-          id, title, content
-        }))
-        this.testimonials = testimonialFields
+        const query = gql`
+          query testimonios {
+            testimonios {
+              nodes {
+                databaseId
+                content(format: RENDERED)
+                title(format: RENDERED)
+              }
+            }
+          }
+        `
+        const { data } = await useAsyncQuery(query)
+        this.testimonials = data.value.testimonios.nodes
       } catch (error) {
         return error
       }

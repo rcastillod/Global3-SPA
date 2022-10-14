@@ -31,11 +31,11 @@
       >
         <div>
           <p class="text-white dark:text-primary text-md md:text-xl mb-5">
-            {{ text.content.rendered }}
+            {{ text.content }}
           </p>
           <span
             class="text-grey-dark dark:text-grey-light uppercase font-arimo tracking-wide italic"
-            >{{ text.title.rendered }}</span
+            >{{ text.title }}</span
           >
         </div>
       </swiper-slide>
