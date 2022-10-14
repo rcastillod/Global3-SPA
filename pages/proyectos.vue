@@ -7,7 +7,9 @@
         subtitle="Descubre nuestros casos"
         title="Últimos proyectos"
       >
-        <div class="proyectos grid grid-cols-5 gap-8 mt-14">
+        <div
+          class="proyectos grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-14"
+        >
           <LayoutProjectCard
             v-for="project in storeProjects.projects"
             :key="project.id"
@@ -25,6 +27,6 @@ import { projectStore } from "~/stores/projects";
 definePageMeta({ layout: "page" });
 
 const storeProjects = projectStore();
-// Call projectStore action
+// // Call projectStore action
 storeProjects.setProjects();
 </script>

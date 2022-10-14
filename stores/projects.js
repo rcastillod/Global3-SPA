@@ -8,19 +8,26 @@ export const projectStore = defineStore('projects', {
   actions: {
     async setProjects() {
       try {
-        const { data, pending } = await useFetch('http://global3headless.local/wp-json/wp/v2/proyectos?page=1&per_page=20&_embed=1?_fields=acf&acf_format=standard')
-        const projectsFields = data.value.map(({ id, slug, title, acf }) => ({
-          id,
-          slug,
-          title,
-          acf,
-        }));
-        this.projects = projectsFields
-        if (pending.value == true)
-          this.loader = false
+        const query = gql`
+          query proyectos {
+            proyectos(first: 500) {
+              nodes {
+                databaseId
+                imagenProyecto {
+                  imagen {
+                    sourceUrl
+                  }
+                }
+                title
+              }
+            }
+          }
+        `
+        const { data } = await useAsyncQuery(query);
+        console.log(data)
+        this.projects = data.value.proyectos.nodes
       } catch (error) {
         console.log(error)
-        // let the form component display the error
         return error
       }
     },

@@ -23,10 +23,6 @@ export const clientStore = defineStore('clients', {
           }
         `;
         const { data } = await useAsyncQuery(query);
-        //const { data } = await useFetch('http://global3headless.local/wp-json/wp/v2/clientes?page=1&per_page=100&_embed=1_fields=acf&acf_format=standard')
-        // const clientFields = data.value.map(({ id, title, acf }) => ({
-        //   id, title, acf
-        // }))
         this.clients = data.value.clientes.nodes
       } catch (error) {
         return error

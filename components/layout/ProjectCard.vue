@@ -13,7 +13,7 @@
         <div
           class="text-xl text-white dark:text-primary transition-colors duration-300 ease-in-out group-hover:text-orange-2"
         >
-          {{ project.title.rendered }}
+          {{ project.title }}
         </div>
       </div>
     </div>
@@ -30,8 +30,8 @@ const props = defineProps({
 });
 
 const projectImage = computed(() => {
-  if (props.project.acf.imagen != false) {
-    return props.project.acf.imagen.sizes.large;
+  if (props.project.imagenProyecto.imagen != null) {
+    return props.project.imagenProyecto.imagen.sourceUrl;
   } else {
     return "/bg-proyects.jpg";
   }
