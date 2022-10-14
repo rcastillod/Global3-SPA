@@ -21,7 +21,7 @@
         <div class="info-wrapper mt-4 md:mt-8 flex flex-col gap-2">
           <ul>
             <li v-for="service in storeServiceTitle.services">
-              {{ service.title.rendered }}
+              {{ service.title }}
             </li>
           </ul>
         </div>

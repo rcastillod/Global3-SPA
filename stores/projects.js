@@ -3,14 +3,15 @@ import { defineStore } from 'pinia'
 export const projectStore = defineStore('projects', {
   state: () => ({
     projects: null,
-    loader: true
+    loader: true,
+    after: null
   }),
   actions: {
     async setProjects() {
       try {
         const query = gql`
           query proyectos {
-            proyectos(first: 500) {
+            proyectos(first: 20) {
               nodes {
                 databaseId
                 imagenProyecto {
@@ -24,7 +25,6 @@ export const projectStore = defineStore('projects', {
           }
         `
         const { data } = await useAsyncQuery(query);
-        console.log(data)
         this.projects = data.value.proyectos.nodes
       } catch (error) {
         console.log(error)
