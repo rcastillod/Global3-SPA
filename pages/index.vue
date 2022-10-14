@@ -53,11 +53,9 @@
       <LayoutBusiness />
     </section>
   </div>
-  <span>{{ servTitles }}</span>
 </template>
 
 <script setup>
-import { computed } from "vue";
 import { servicesStore } from "~/stores/services";
 
 const storeServices = servicesStore();

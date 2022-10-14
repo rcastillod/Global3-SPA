@@ -19,7 +19,15 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss', 
     '@nuxtjs/color-mode', 
     '@pinia/nuxt',
+    '@nuxtjs/apollo'
   ],
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: 'https://v2.global3.cl/graphql'
+      }
+    },
+  },
   tailwindcss: {
     cssPath: '~/assets/ss/tailwind.css',
     configPath: 'tailwind.config.js',

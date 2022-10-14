@@ -4,19 +4,13 @@
   >
     <div class="clients flex relative overflow-hidden select-none">
       <div class="anim-wrapper flex shrink-0 justify-around min-w-full">
-        <div v-for="client in storeClients.clients" :key="client.id">
-          <img
-            :src="client.acf.logo.sizes.large"
-            :alt="client.title.rendered"
-          />
+        <div v-for="client in storeClients.clients" :key="client.clientId">
+          <img :src="client.clientes.logo.sourceUrl" :alt="client.title" />
         </div>
       </div>
       <div class="anim-wrapper flex shrink-0 justify-around min-w-full">
-        <div v-for="client in storeClients.clients" :key="client.id">
-          <img
-            :src="client.acf.logo.sizes.large"
-            :alt="client.title.rendered"
-          />
+        <div v-for="client in storeClients.clients" :key="client.clientId">
+          <img :src="client.clientes.logo.sourceUrl" :alt="client.title" />
         </div>
       </div>
     </div>
