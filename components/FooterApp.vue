@@ -9,7 +9,9 @@
       <div>
         <h5 class="text-grey-dark dark:text-grey-light text-xl">Contáctanos</h5>
         <div class="info-wrapper mt-4 md:mt-8 flex flex-col gap-2">
-          <NuxtLink to="/"> Serrano #264 of. 216 Melipilla, Chile. </NuxtLink>
+          <NuxtLink to="https://goo.gl/maps/ZLFn7Lky1ibCvw63A" target="_blank">
+            Serrano #264 of. 216 Melipilla, Chile.
+          </NuxtLink>
           <NuxtLink to="https://wa.link/4k6yh3" target="_blank">
             +56 9 9251 9913
           </NuxtLink>
