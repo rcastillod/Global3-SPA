@@ -18,7 +18,10 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "graphql-tag": "^2.12.6",
     "nuxt-graphql-client": "^0.1.21",
-    "swiper": "^8.4.3"
+    "swiper": "^8.4.3",
+    "vee-validate": "^4.7.0",
+    "yup": "^0.32.11"
   }
 }

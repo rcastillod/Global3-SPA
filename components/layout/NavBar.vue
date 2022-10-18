@@ -24,9 +24,14 @@
         >Proyectos</NuxtLink
       >
       <NuxtLink
-        to="/"
+        to="/soporte"
         class="block text-grey-dark dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-white transition-all ease-in-out duration-300"
         >Soporte</NuxtLink
+      >
+      <NuxtLink
+        to="/contacto"
+        class="block text-grey-dark dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-white transition-all ease-in-out duration-300"
+        >Contacto</NuxtLink
       >
     </div>
     <button

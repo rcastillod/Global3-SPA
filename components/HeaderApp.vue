@@ -16,7 +16,7 @@
         <div
           class="header-right hidden md:flex items-center justify-end lg:basis-[45%] gap-8"
         >
-          <ElementsButtonGradient class="hidden md:block"
+          <ElementsButtonGradient class="hidden md:block" link="contacto"
             >Contáctanos</ElementsButtonGradient
           >
           <ElementsSwitchMode class="hidden md:flex" />

@@ -15,6 +15,9 @@ export default defineNuxtConfig({
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
   },
+  // build: {
+  //   transpile: ['vee-validate']
+  // },
   modules: [
     '@nuxtjs/tailwindcss', 
     '@nuxtjs/color-mode', 
@@ -24,7 +27,7 @@ export default defineNuxtConfig({
   apollo: {
     clients: {
       default: {
-        httpEndpoint: 'https://v2.global3.cl/graphql'
+        httpEndpoint: 'https://v2.global3.cl/graphql',
       }
     },
   },
@@ -39,4 +42,5 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ''
   },
+  // plugins: ["~/plugins/vee-validate"]
 })

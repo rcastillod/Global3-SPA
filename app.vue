@@ -11,21 +11,21 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { onMounted } from "vue";
+
 // AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default {
-  mounted() {
-    AOS.init({ disable: "phone" });
-  },
-};
+onMounted(() => {
+  AOS.init({ disable: "phone" });
+});
 </script>
 
 <style>
 /* -------------------------------------------------------------------------- */
-/*                               TANSITION PAGE                               */
+/*                               TRANSITION PAGE                               */
 /* -------------------------------------------------------------------------- */
 /* .layout-enter-active,
 .layout-leave-active {

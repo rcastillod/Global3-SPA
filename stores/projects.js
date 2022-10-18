@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import gql from 'graphql-tag'
 
 export const projectStore = defineStore('projects', {
   state: () => ({
