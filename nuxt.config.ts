@@ -40,7 +40,9 @@ export default defineNuxtConfig({
     viewer: true
   },
   colorMode: {
-    classSuffix: ''
+    preference: 'system',
+    classSuffix: '',
+    fallback: 'dark',
   },
   // plugins: ["~/plugins/vee-validate"]
 })
