@@ -93,9 +93,3 @@
 <script setup>
 definePageMeta({ layout: "page" });
 </script>
-
-<style>
-.page-header {
-  background-image: url("/header.png");
-}
-</style>

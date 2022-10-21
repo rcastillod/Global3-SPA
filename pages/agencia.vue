@@ -1,6 +1,5 @@
 <template>
   <div>
-    <LayoutPageHeader pageTitle="Agencia" />
     <!-- Empresa -->
     <section class="w-full md:mt-10">
       <LayoutPageSection class="items-center">
@@ -93,9 +92,6 @@ definePageMeta({ layout: "page" });
 </script>
 
 <style>
-.page-header {
-  background-image: url("/header.png");
-}
 .marquee-wrapper::before,
 .marquee-wrapper::after {
   content: "";

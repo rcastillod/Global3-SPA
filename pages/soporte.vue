@@ -69,9 +69,3 @@ const supports = ref([
   },
 ]);
 </script>
-
-<style>
-.page-header {
-  background-image: url("/header.png");
-}
-</style>

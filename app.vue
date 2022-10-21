@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <Body :style="{ 'background-image': 'url(' + pageTitleBg + ')' }">
     <NuxtLayout>
       <NuxtPage />
       <ElementsCustomCursor
@@ -8,11 +8,11 @@
         borderColor="#FF6100"
       />
     </NuxtLayout>
-  </div>
+  </Body>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
 
 // AOS
 import AOS from "aos";
@@ -21,6 +21,19 @@ import "aos/dist/aos.css";
 onMounted(() => {
   AOS.init({ disable: "phone" });
 });
+
+// Page Header Images
+let pageTitleBg = ref("");
+const route = useRoute();
+if (route.name == "agencia") {
+  pageTitleBg = "./agencia-page-title.jpg";
+} else if (route.name == "servicios") {
+  pageTitleBg = "./servicios-page-title.jpg";
+} else if (route.name == "proyectos") {
+  pageTitleBg = "./servicios-page-title.jpg";
+} else if (route.name == "contacto") {
+  pageTitleBg = "./contacto-page-title.jpg";
+}
 </script>
 
 <style>
@@ -45,6 +58,7 @@ body {
 }
 body {
   @apply bg-primary dark:bg-background-color-light relative;
+  @apply bg-cover bg-no-repeat bg-center bg-top;
 }
 body::before {
   content: "";
