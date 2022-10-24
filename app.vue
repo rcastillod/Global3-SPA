@@ -1,14 +1,12 @@
 <template>
-  <Body :style="{ 'background-image': 'url(' + pageTitleBg + ')' }">
-    <NuxtLayout>
-      <NuxtPage />
-      <ElementsCustomCursor
-        scaleElement="logo"
-        dotColor="#FF6100"
-        borderColor="#FF6100"
-      />
-    </NuxtLayout>
-  </Body>
+  <NuxtLayout>
+    <NuxtPage />
+    <ElementsCustomCursor
+      scaleElement="link"
+      dotColor="#FF6100"
+      borderColor="#FF6100"
+    />
+  </NuxtLayout>
 </template>
 
 <script setup>
@@ -20,6 +18,12 @@ import "aos/dist/aos.css";
 
 onMounted(() => {
   AOS.init({ disable: "phone" });
+
+  // Add class to all link for custom cursor work
+  let links = document.querySelectorAll("a");
+  links.forEach((link) => {
+    link.classList.add("link");
+  });
 });
 
 // Page Header Images
