@@ -1,6 +1,8 @@
 <template>
-  <div
-    class="h-[200px] w-[200px] flex items-center justify-center relative rounded-full"
+  <NuxtLink
+    to="/proyectos"
+    class="h-[200px] w-[200px] flex items-center justify-center relative rounded-full link link-white"
+    data-aos="fade-down"
   >
     <div
       class="h-3/4 w-3/4 flex items-center justify-center bg-gradient-to-r from-orange-1 to-orange-2 to-orange-3 rounded-full"
@@ -31,7 +33,7 @@
         </span>
       </p>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup>

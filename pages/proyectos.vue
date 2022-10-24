@@ -1,6 +1,5 @@
 <template>
   <div>
-    <LayoutPageHeader pageTitle="Proyectos" />
     <section class="w-full md:mt-10 px-4 md:px-8">
       <LayoutSiteSection
         :full="true"
@@ -11,9 +10,12 @@
           class="proyectos grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-14"
         >
           <LayoutProjectCard
-            v-for="project in storeProjects.projects"
+            v-for="(project, index) in storeProjects.projects"
             :key="project.id"
             :project="project"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            :data-aos-delay="`${index}00`"
           />
         </div>
       </LayoutSiteSection>

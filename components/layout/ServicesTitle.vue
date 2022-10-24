@@ -4,6 +4,7 @@
       v-for="(service, index) in services"
       :key="index"
       class="service-title font-arimo uppercase text-white dark:text-primary tracking-wide font-medium"
+      data-aos="flip-down"
     >
       {{ service.title }} /
     </h2>

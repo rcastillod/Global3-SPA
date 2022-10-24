@@ -1,13 +1,20 @@
 <template>
   <div>
-    <LayoutPageHeader pageTitle="Servicios" />
     <section class="w-full md:mt-10">
       <LayoutPageSection>
         <div class="col-span-12 md:col-span-4 space-y-6">
           <div class="md:sticky md:top-40">
-            <p class="text-grey-dark dark:text-grey-light text-xl">Servicios</p>
+            <p
+              class="text-grey-dark dark:text-grey-light text-xl"
+              data-aos="flip-down"
+              data-aos-duration="1000"
+            >
+              Servicios
+            </p>
             <h3
               class="text-white dark:text-primary text-4xl font-arimo uppercase mt-8 tracking-wider"
+              data-aos="flip-up"
+              data-aos-duration="1000"
             >
               Herramientas digitales para soluciones integrales
             </h3>
@@ -19,6 +26,9 @@
             :key="index"
             :service="service"
             :description="true"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            :data-aos-delay="`${index}00`"
           />
         </div>
       </LayoutPageSection>

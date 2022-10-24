@@ -7,6 +7,8 @@
       v-if="subtitle"
       :class="subtitleAlignment"
       class="text-grey-dark dark:text-grey-light text-xl"
+      data-aos="flip-down"
+      data-aos-duration="1000"
     >
       {{ subtitle }}
     </p>
@@ -14,6 +16,8 @@
       v-if="title"
       :class="titleAlignment"
       class="text-white dark:text-primary text-4xl font-arimo uppercase mt-5 tracking-wider"
+      data-aos="flip-up"
+      data-aos-duration="1000"
     >
       {{ title }}
     </h3>

@@ -18,26 +18,13 @@ import "aos/dist/aos.css";
 
 onMounted(() => {
   AOS.init({ disable: "phone" });
-
-  // Add class to all link for custom cursor work
-  let links = document.querySelectorAll("a");
-  links.forEach((link) => {
-    link.classList.add("link");
-  });
 });
 
-// Page Header Images
-let pageTitleBg = ref("");
-const route = useRoute();
-if (route.name == "agencia") {
-  pageTitleBg = "./agencia-page-title.jpg";
-} else if (route.name == "servicios") {
-  pageTitleBg = "./servicios-page-title.jpg";
-} else if (route.name == "proyectos") {
-  pageTitleBg = "./servicios-page-title.jpg";
-} else if (route.name == "contacto") {
-  pageTitleBg = "./contacto-page-title.jpg";
-}
+// Scroll to top when navigate through pages
+const nuxtApp = useNuxtApp();
+nuxtApp.hook("page:finish", () => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <style>

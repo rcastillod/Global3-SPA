@@ -10,27 +10,27 @@
     >
       <NuxtLink
         to="/agencia"
-        class="nav-link block text-grey-dark dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-white transition-all ease-in-out duration-300"
+        class="block text-white dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-orange-2 transition-all ease-in-out duration-300 link"
         >Agencia</NuxtLink
       >
       <NuxtLink
         to="/servicios"
-        class="block text-grey-dark dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-white transition-all ease-in-out duration-300"
+        class="block text-white dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-orange-2 transition-all ease-in-out duration-300 link"
         >Servicios</NuxtLink
       >
       <NuxtLink
         to="/proyectos"
-        class="block text-grey-dark dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-white transition-all ease-in-out duration-300"
+        class="block text-white dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-orange-2 transition-all ease-in-out duration-300 link"
         >Proyectos</NuxtLink
       >
       <NuxtLink
         to="/soporte"
-        class="block text-grey-dark dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-white transition-all ease-in-out duration-300"
+        class="block text-white dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-orange-2 transition-all ease-in-out duration-300 link"
         >Soporte</NuxtLink
       >
       <NuxtLink
         to="/contacto"
-        class="block text-grey-dark dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-white transition-all ease-in-out duration-300"
+        class="block text-white dark:text-grey-light p-2 md:py-7 md:px-3 mx-1 border-b border-border-color dark:border-border-color-light md:border-b-0 hover:text-orange-2 transition-all ease-in-out duration-300 link"
         >Contacto</NuxtLink
       >
     </div>

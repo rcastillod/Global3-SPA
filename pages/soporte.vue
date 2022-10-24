@@ -1,18 +1,31 @@
 <template>
   <div>
-    <LayoutPageHeader pageTitle="Soporte" />
     <!-- Empresa -->
     <section class="w-full md:mt-10">
       <LayoutPageSection class="items-center">
-        <div class="col-span-12 md:col-span-6 mt-10 md:mt-0">
+        <div
+          class="col-span-12 md:col-span-6 mt-10 md:mt-0"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <ElementsSectionImage img="soporte.jpg" />
         </div>
-        <div class="col-span-12 md:col-span-6 space-y-6 md:ml-14 mt-10 md:mt-0">
-          <p class="text-grey-dark dark:text-grey-light text-xl">
+        <div
+          class="col-span-12 md:col-span-6 space-y-6 md:ml-14 mt-10 md:mt-0"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+          <p
+            class="text-grey-dark dark:text-grey-light text-xl"
+            data-aos="flip-down"
+            data-aos-duration="1000"
+          >
             Comprometidos con nuestros Clientes
           </p>
           <h3
             class="text-white dark:text-primary text-4xl font-arimo uppercase mt-8 tracking-wider"
+            data-aos="flip-up"
+            data-aos-duration="1000"
           >
             Soporte Online y Presencial
           </h3>
@@ -32,6 +45,9 @@
           v-for="(support, index) in supports"
           :key="index"
           :support="support"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          :data-aos-delay="`${index}00`"
         />
       </LayoutPageSection>
     </section>

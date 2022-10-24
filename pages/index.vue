@@ -19,6 +19,9 @@
             v-for="(service, index) in storeServices.services"
             :key="index"
             :service="service"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            :data-aos-delay="`${index}00`"
           />
         </div>
       </LayoutSiteSection>
@@ -42,7 +45,7 @@
     <!-- Testimonials -->
     <section class="w-full">
       <LayoutSiteSection>
-        <LayoutTestimonials />
+        <LayoutTestimonials data-aos="fade-up" data-aos-duration="1000" />
       </LayoutSiteSection>
     </section>
     <!-- Business -->

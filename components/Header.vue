@@ -1,6 +1,6 @@
 <template>
   <header
-    class="backdrop-blur-md w-full top-0 sticky z-10 py-3 border-b border-border-color dark:border-border-color-light"
+    class="backdrop-blur-md w-full fixed top-0 z-10 py-3 border-b border-border-color dark:border-border-color-light"
   >
     <div class="container mx-auto px-4 md:px-0">
       <div class="header-inner flex items-center justify-between">
