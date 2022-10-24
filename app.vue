@@ -17,7 +17,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 onMounted(() => {
-  AOS.init({ disable: "phone" });
+  AOS.init({ disable: "false" });
 });
 
 // Scroll to top when navigate through pages
