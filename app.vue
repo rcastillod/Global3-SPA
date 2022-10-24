@@ -62,6 +62,9 @@ body::before {
   z-index: -1;
   opacity: 0.05;
 }
+body #app {
+  overflow: hidden;
+}
 
 /* Page Header */
 .page-header::after {
