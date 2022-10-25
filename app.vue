@@ -62,7 +62,7 @@ body::before {
   z-index: -1;
   opacity: 0.05;
 }
-body #app {
+body #__nuxt {
   overflow: hidden;
 }
 
