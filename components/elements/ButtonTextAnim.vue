@@ -3,6 +3,7 @@
     to="/proyectos"
     class="h-[200px] w-[200px] flex items-center justify-center relative rounded-full link link-white"
     data-aos="fade-down"
+    data-aos-duration="1000"
   >
     <div
       class="h-3/4 w-3/4 flex items-center justify-center bg-gradient-to-r from-orange-1 to-orange-2 to-orange-3 rounded-full"

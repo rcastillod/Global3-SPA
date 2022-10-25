@@ -1,14 +1,14 @@
 <template>
   <button
     v-if="$colorMode.preference === 'dark'"
-    class="rounded-full h-10 w-10 border border-border-color dark:border-border-color-light flex items-center justify-center link"
+    class="rounded-full h-10 w-10 border border-white dark:border-border-color-light flex items-center justify-center link"
     @click="setColorTheme('light')"
   >
     <img :src="darkIconSrc" width="24" alt="Moon Icon" />
   </button>
   <button
     v-else
-    class="rounded-full h-10 w-10 border border-border-color dark:border-border-color-light flex items-center justify-center link"
+    class="rounded-full h-10 w-10 border border-white dark:border-border-color-light flex items-center justify-center link"
     @click="setColorTheme('dark')"
   >
     <img :src="lightIconSrc" width="24" alt="Moon Icon" />
