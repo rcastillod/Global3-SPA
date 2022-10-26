@@ -15,9 +15,7 @@ export default defineNuxtConfig({
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
   },
-  // build: {
-  //   transpile: ['vee-validate']
-  // },
+  build: { transpile: ['yup', '@vee-validate/rules'] },
   modules: [
     '@nuxtjs/tailwindcss', 
     '@nuxtjs/color-mode', 
@@ -44,5 +42,4 @@ export default defineNuxtConfig({
     classSuffix: '',
     fallback: 'dark',
   },
-  // plugins: ["~/plugins/vee-validate"]
 })

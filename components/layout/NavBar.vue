@@ -50,3 +50,9 @@ import { ref } from "vue";
 const open = ref(false);
 const dropdownNavbar = ref(false);
 </script>
+
+<style>
+a.router-link-active {
+  @apply text-orange-2;
+}
+</style>
