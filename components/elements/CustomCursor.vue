@@ -56,9 +56,6 @@ onMounted(() => {
 </script>
 
 <style>
-* {
-  cursor: none;
-}
 .vueCursor,
 .vueCursor--Small {
   position: fixed;

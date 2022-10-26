@@ -11,11 +11,10 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-
-// AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// AOS
 onMounted(() => {
   AOS.init({ disable: "false" });
 });

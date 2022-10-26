@@ -1,10 +1,6 @@
 <template>
   <div>
     <Header />
-    <!-- <div
-      class="page-header flex items-center justify-center -z-10 absolute top-0 left-0 w-full h-[25rem] bg-cover bg-no-repeat bg-center bg-top"
-      :style="pageTitleBg"
-    > -->
     <div
       class="page-header flex items-center justify-center relative -z-10 w-full h-[25rem] bg-cover bg-no-repeat bg-center bg-top"
       :style="pageTitleBg"
@@ -14,12 +10,23 @@
     <main>
       <slot />
     </main>
+    <ElementsPreloader v-if="preloader" />
     <Footer />
   </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted, onBeforeMount } from "vue";
+
+// Preloader
+let preloader = ref("true");
+
+onBeforeMount(() => {
+  preloader.value = true;
+}),
+  onMounted(() => {
+    preloader.value = false;
+  });
 
 const route = useRoute();
 
