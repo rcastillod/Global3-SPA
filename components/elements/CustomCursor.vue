@@ -7,7 +7,6 @@
 
 <script setup>
 import { computed, onMounted } from "vue";
-import { gsap } from "gsap";
 
 const props = defineProps({
   scaleElement: {},
@@ -58,7 +57,6 @@ onMounted(() => {
   });
 
   // btnRounded.addEventListener("mouseenter", () => {
-  //   gsap.to(vueCursorSmall, { x: 200 });
   //   vueCursor.classList.add("active");
   // });
   // btnRounded.addEventListener("mouseleave", () => {
@@ -68,56 +66,61 @@ onMounted(() => {
 </script>
 
 <style>
-.vueCursor,
-.vueCursor--Small {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100000;
-  border-radius: 50%;
-  pointer-events: none;
-  box-sizing: border-box;
-  backface-visibility: hidden;
-}
-
-.vueCursor {
-  transition: transform 100ms;
-  border: 1px solid #f00;
-}
-
-.vueCursor.active {
-  border: none;
-}
-.vueCursor::after {
-  content: "";
-  animation: rotate 10s infinite linear;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  border: 3px dashed red;
-  opacity: 0;
-}
-.vueCursor.active::after {
-  opacity: 1;
-}
-
-.vueCursor.active + .vueCursor--Small {
-  opacity: 0;
-}
-
-.vueCursor--Small {
-  background-color: #aaa;
-}
-
-@keyframes rotate {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(0.9);
+@media (min-width: 1280px) {
+  * {
+    cursor: none;
   }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg) scale(0.9);
+  .vueCursor,
+  .vueCursor--Small {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    border-radius: 50%;
+    pointer-events: none;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+  }
+
+  .vueCursor {
+    transition: transform 100ms;
+    border: 1px solid #f00;
+  }
+
+  .vueCursor.active {
+    border: none;
+  }
+  .vueCursor::after {
+    content: "";
+    animation: rotate 10s infinite linear;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 2px dashed white;
+    opacity: 0;
+  }
+  .vueCursor.active::after {
+    opacity: 1;
+  }
+
+  .vueCursor.active + .vueCursor--Small {
+    opacity: 0;
+  }
+
+  .vueCursor--Small {
+    background-color: #aaa;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) scale(0.9);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) scale(0.9);
+    }
   }
 }
 </style>

@@ -4,7 +4,7 @@
       :class="[
         open
           ? 'flex flex-col absolute top-full left-0 mt-1 bg-primary dark:bg-background-color-light'
-          : 'hidden md:flex',
+          : 'hidden lg:flex',
       ]"
       class="w-full"
     >
