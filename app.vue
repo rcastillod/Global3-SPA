@@ -61,9 +61,11 @@ body::before {
   z-index: -1;
   opacity: 0.05;
 }
-/* body #__nuxt {
-  overflow: hidden;
-} */
+@media (max-width: 1024px) {
+  body #__nuxt {
+    overflow: hidden;
+  }
+}
 
 /* Page Header */
 .page-header::after {
