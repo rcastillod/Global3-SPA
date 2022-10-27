@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     to="/proyectos"
-    class="h-[200px] w-[200px] flex items-center justify-center relative rounded-full link link-white"
+    class="h-[200px] w-[200px] flex items-center justify-center relative rounded-full link link-anim"
     data-aos="fade-down"
     data-aos-duration="1000"
   >
@@ -55,6 +55,12 @@ const textSplit = computed(() => {
 </script>
 
 <style scoped>
+a svg {
+  transition: transform 300ms ease-in-out;
+}
+a:hover svg {
+  transform: scale(0);
+}
 .text {
   animation: textRotate 10s linear infinite;
 }

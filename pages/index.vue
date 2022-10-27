@@ -37,7 +37,9 @@
       class="bg-grayscale w-full bg-[url('/bg-proyects.jpg')] bg-cover bg-no-repeat bg-center"
     >
       <LayoutSiteSection class="flex justify-center md:justify-start">
-        <ElementsButtonTextAnim text="Ver Proyectos - Ver Proyectos" />
+        <ElementsButtonTextAnim
+          text="Ver Proyectos  Ver Proyectos  Ver Proyectos"
+        />
       </LayoutSiteSection>
     </section>
     <!-- Testimonials -->

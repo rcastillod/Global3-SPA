@@ -24,11 +24,12 @@ const props = defineProps({
   },
 });
 
+const route = useRoute();
+
 onMounted(() => {
   let vueCursor = document.querySelector(".vueCursor");
-  let vueCursorAfter = document.querySelector("::after");
   let vueCursorSmall = document.querySelector(".vueCursor--Small");
-  let btnRounded = document.querySelector(".btn-rounded");
+  let linkAnim = document.querySelectorAll(".link-anim");
 
   document.addEventListener("mousemove", (e) => {
     let scaleElementHovered =
@@ -56,12 +57,16 @@ onMounted(() => {
       background-color: ${props.dotColor}`;
   });
 
-  // btnRounded.addEventListener("mouseenter", () => {
-  //   vueCursor.classList.add("active");
-  // });
-  // btnRounded.addEventListener("mouseleave", () => {
-  //   vueCursor.classList.remove("active");
-  // });
+  if (route.name == "index") {
+    linkAnim.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        vueCursor.classList.add("active");
+      });
+      el.addEventListener("mouseleave", () => {
+        vueCursor.classList.remove("active");
+      });
+    });
+  }
 });
 </script>
 
@@ -94,16 +99,33 @@ onMounted(() => {
     content: "";
     animation: rotate 10s infinite linear;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     height: 100%;
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     border: 2px dashed white;
     opacity: 0;
   }
-  .vueCursor.active::after {
+  .vueCursor::before {
+    content: url("/arrow-link-light.svg");
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    width: 50%;
+    opacity: 0;
+    transition: transform 400ms ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  .vueCursor.active::after,
+  .vueCursor.active::before {
     opacity: 1;
+  }
+
+  .vueCursor.active::before {
+    transform: translate(-50%, -50%) scale(1);
   }
 
   .vueCursor.active + .vueCursor--Small {

@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="url"
-    class="btn-rounded w-[200px] h-[200px] rounded-full flex items-center justify-center text-white text-xl bg-cover bg-center bg-no-repeat relative z-[1] link"
+    class="btn-rounded w-[200px] h-[200px] rounded-full flex items-center justify-center text-white text-xl bg-cover bg-center bg-no-repeat relative z-[1] link link-anim"
     :style="`background-image:url(${image})`"
   >
     <slot />
