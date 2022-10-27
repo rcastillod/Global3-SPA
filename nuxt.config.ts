@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
   },
-  build: { transpile: ['yup', '@vee-validate/rules'] },
+  build: { transpile: ['yup', '@vee-validate/rules', 'gsap'] },
   modules: [
     '@nuxtjs/tailwindcss', 
     '@nuxtjs/color-mode', 

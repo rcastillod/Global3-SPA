@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="self-end">
-          <ElementsButtonRounded class="mt-0 md:-mt-20 lg:mt-0"
+          <ElementsButtonRounded class="mt-0 md:-mt-20 lg:mt-0" url="/contacto"
             >Contáctanos</ElementsButtonRounded
           >
         </div>

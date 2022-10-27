@@ -5,6 +5,7 @@
       :key="index"
       class="service-title font-arimo uppercase text-white dark:text-primary tracking-wide font-medium"
       data-aos="flip-down"
+      data-aos-duration="1000"
     >
       {{ service.title }} /
     </h2>

@@ -20,6 +20,7 @@
     "@vee-validate/rules": "^4.7.1",
     "aos": "^2.3.4",
     "graphql-tag": "^2.12.6",
+    "gsap": "^3.11.3",
     "nuxt-graphql-client": "^0.1.21",
     "pinia": "^2.0.23",
     "swiper": "^8.4.3",

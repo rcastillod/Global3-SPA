@@ -7,6 +7,7 @@
 
 <script setup>
 import { computed, onMounted } from "vue";
+import { gsap } from "gsap";
 
 const props = defineProps({
   scaleElement: {},
@@ -26,7 +27,10 @@ const props = defineProps({
 
 onMounted(() => {
   let vueCursor = document.querySelector(".vueCursor");
+  let vueCursorAfter = document.querySelector("::after");
   let vueCursorSmall = document.querySelector(".vueCursor--Small");
+  let btnRounded = document.querySelector(".btn-rounded");
+
   document.addEventListener("mousemove", (e) => {
     let scaleElementHovered =
       e.target &&
@@ -52,6 +56,14 @@ onMounted(() => {
       height: ${props.dotSize * 2}px;
       background-color: ${props.dotColor}`;
   });
+
+  // btnRounded.addEventListener("mouseenter", () => {
+  //   gsap.to(vueCursorSmall, { x: 200 });
+  //   vueCursor.classList.add("active");
+  // });
+  // btnRounded.addEventListener("mouseleave", () => {
+  //   vueCursor.classList.remove("active");
+  // });
 });
 </script>
 
@@ -73,7 +85,39 @@ onMounted(() => {
   border: 1px solid #f00;
 }
 
+.vueCursor.active {
+  border: none;
+}
+.vueCursor::after {
+  content: "";
+  animation: rotate 10s infinite linear;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px dashed red;
+  opacity: 0;
+}
+.vueCursor.active::after {
+  opacity: 1;
+}
+
+.vueCursor.active + .vueCursor--Small {
+  opacity: 0;
+}
+
 .vueCursor--Small {
   background-color: #aaa;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.9);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(0.9);
+  }
 }
 </style>
