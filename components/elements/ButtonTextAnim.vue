@@ -55,11 +55,13 @@ const textSplit = computed(() => {
 </script>
 
 <style scoped>
-a svg {
-  transition: transform 300ms ease-in-out;
-}
-a:hover svg {
-  transform: scale(0);
+@media (min-width: 1024px) {
+  a svg {
+    transition: transform 300ms ease-in-out;
+  }
+  a:hover svg {
+    transform: scale(0);
+  }
 }
 .text {
   animation: textRotate 10s linear infinite;
