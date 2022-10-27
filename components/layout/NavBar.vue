@@ -35,7 +35,7 @@
       >
     </div>
     <button
-      class="md:hidden rounded-full h-10 w-10 border border-border-color dark:border-border-color-light flex items-center justify-center"
+      class="md:hidden rounded-full h-10 w-10 border border-white dark:border-border-color-light flex items-center justify-center"
       @click="open = !open"
     >
       <ElementsOpenMenuIcon v-if="!open" :size="24" />
