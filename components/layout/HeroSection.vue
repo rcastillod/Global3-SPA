@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-2xl mx-auto py-20 px-4 md:px-8 md:py-36 md:pt-[15.625rem]"
+    class="max-w-screen-2xl mx-auto py-40 px-4 md:px-8 md:py-36 md:pt-[15.625rem]"
   >
     <h1 class="hero-title font-bold lg:text-center">Creamos</h1>
     <div class="max-w-screen-lg mx-auto md:-mt-12 lg:-mt-16">
