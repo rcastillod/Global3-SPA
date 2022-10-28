@@ -31,7 +31,7 @@
   background-image: url("../../assets/images/text-bg-mask.jpg");
   background-position: center center;
   background-size: cover;
-  font-size: clamp(4.375rem, 15vw, 15.625rem);
+  font-size: clamp(3.675rem, 15vw, 15.625rem);
   line-height: 0.9375em;
   text-transform: uppercase;
   -webkit-background-clip: text;
