@@ -111,6 +111,10 @@
         <button
           :disabled="!formMeta.valid"
           type="submit"
+          :class="{
+            'from-slate-400 via-slate-500 to-slate-600 text-white hover:shadow-slate-800 cursor-not-allowed':
+              !formMeta.valid,
+          }"
           class="inline-block bg-gradient-to-r from-orange-1 via-orange-2 to-orange-3 text-white py-2 px-5 rounded hover:shadow-lg hover:shadow-orange-1/40 transition-all ease-in-out duration-500 link"
         >
           Enviar
