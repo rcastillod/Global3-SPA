@@ -113,7 +113,7 @@
 definePageMeta({ layout: "page" });
 </script>
 
-<style>
+<style scoped>
 .marquee-wrapper::before,
 .marquee-wrapper::after {
   content: "";

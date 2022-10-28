@@ -50,3 +50,9 @@ const pageTitleBg = computed(() => {
   }
 });
 </script>
+
+<style scoped>
+header {
+  @apply dark:bg-white/50 bg-transparent;
+}
+</style>
