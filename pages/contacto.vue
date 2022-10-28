@@ -11,7 +11,7 @@
           <LayoutContactForm />
         </div>
         <div
-          class="col-span-12 md:col-span-6 space-y-6 md:ml-14 mt-10 md:mt-0"
+          class="col-span-12 md:col-span-6 space-y-6 md:ml-14 mt-10 md:mt-0 -order-1 md:order-2"
           data-aos="fade-left"
           data-aos-duration="1000"
         >
