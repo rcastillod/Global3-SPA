@@ -5,18 +5,18 @@
     <div class="container mx-auto px-4 md:px-0">
       <div class="header-inner flex items-center justify-between">
         <div
-          class="header-left flex items-center justify-between md:justify-start lg:basis-[55%] w-full"
+          class="header-left flex items-center justify-between lg:justify-start lg:basis-[55%] w-full"
         >
           <ElementsLogoApp />
           <div class="flex gap-5">
             <LayoutNavBar></LayoutNavBar>
-            <ElementsSwitchMode class="flex order-first md:hidden" />
+            <ElementsSwitchMode class="flex order-first lg:hidden" />
           </div>
         </div>
         <div
-          class="header-right hidden md:flex items-center justify-end lg:basis-[45%] gap-8"
+          class="header-right hidden lg:flex items-center justify-end lg:basis-[45%] gap-8"
         >
-          <ElementsButtonGradient class="hidden md:block" link="contacto"
+          <ElementsButtonGradient class="hidden lg:block" link="contacto"
             >Contáctanos</ElementsButtonGradient
           >
           <ElementsSwitchMode class="hidden md:flex" />
