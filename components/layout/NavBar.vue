@@ -196,9 +196,9 @@ const drawer = () => {
 
 watch(
   isOpen,
-  () => {
+  (newVal, oldVal) => {
     if (process.client) {
-      if (isOpen) document.body.style.setProperty("overflow", "hidden");
+      if (newVal == true) document.body.style.setProperty("overflow", "hidden");
       else document.body.style.removeProperty("overflow");
     }
   },

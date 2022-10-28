@@ -5,7 +5,6 @@
       <slot />
     </main>
     <ElementsPreloader v-if="preloader" />
-    <div id="aside"></div>
     <Footer />
   </div>
 </template>
