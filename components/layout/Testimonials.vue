@@ -2,7 +2,7 @@
   <div class="grid grid-cols-4">
     <div class="hidden md:flex relative col-span-1 items-center justify-center">
       <ElementsImageBlur
-        :src="quoteImageSrc"
+        src="/quote.png"
         alt="Quote"
         position="relative"
         width="150"
@@ -45,16 +45,11 @@
 <script setup>
 import { ref, computed } from "vue";
 import { testimonialStore } from "~/stores/testimonials";
-import quoteImage from "~/assets/images/quote.png";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-
-const quoteImageSrc = computed(() => {
-  return quoteImage;
-});
 
 const modules = computed(() => [Pagination, Autoplay]);
 

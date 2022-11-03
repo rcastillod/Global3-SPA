@@ -9,15 +9,14 @@
 
 <script setup>
 import { computed } from "vue";
-import logoUrlDark from "~/assets/images/logoAppDark.svg";
-import logoUrlLight from "~/assets/images/logoAppLight.svg";
 
 const colorMode = useColorMode();
+const src = ref("");
 
 const logoSrc = computed(() => {
   if (colorMode.preference == "dark") {
-    return logoUrlLight;
+    return (src.value = "/logoAppLight.svg");
   }
-  return logoUrlDark;
+  return (src.value = "/logoAppDark.svg");
 });
 </script>

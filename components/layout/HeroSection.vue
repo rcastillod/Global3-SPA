@@ -28,7 +28,7 @@
 
 <style scoped>
 .hero-title {
-  background-image: url("../../assets/images/text-bg-mask.jpg");
+  background-image: url("/text-bg-mask.jpg");
   background-position: center center;
   background-size: cover;
   font-size: clamp(3.675rem, 15vw, 15.625rem);

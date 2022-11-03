@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -57,7 +57,7 @@ body::before {
   position: absolute;
   left: 0;
   top: 0;
-  background-image: url(./assets/images/noise.gif);
+  background-image: url(/noise.gif);
   z-index: -1;
   opacity: 0.05;
 }

@@ -17,8 +17,8 @@
 
 <script setup>
 import { computed } from "vue";
-import darkIcon from "~/assets/images/dark.svg";
-import lightIcon from "~/assets/images/light.svg";
+import darkIcon from "/dark.svg";
+import lightIcon from "/light.svg";
 
 const colorMode = useColorMode();
 
