@@ -50,7 +50,12 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-
+const onSwiper = (swiper) => {
+  //console.log(swiper);
+};
+const onSlideChange = () => {
+  //console.log("slide change");
+};
 const modules = computed(() => [Pagination, Autoplay]);
 
 const storeTestimonials = testimonialStore();

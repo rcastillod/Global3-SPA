@@ -41,7 +41,7 @@ export default defineNuxtConfig({
     viewer: true
   },
   colorMode: {
-    preference: 'system',
+    preference: 'light',
     classSuffix: '',
     fallback: 'dark',
   },
