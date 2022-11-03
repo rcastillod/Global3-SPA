@@ -23,10 +23,10 @@ let preloader = ref("true");
 
 onBeforeMount(() => {
   preloader.value = true;
-}),
-  onMounted(() => {
-    preloader.value = false;
-  });
+});
+onMounted(() => {
+  preloader.value = false;
+});
 
 const route = useRoute();
 

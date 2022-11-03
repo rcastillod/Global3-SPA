@@ -1,18 +1,24 @@
 <template>
-  <div id="preloader"><span>.</span><span>.</span><span>.</span></div>
+  <div id="preloader">
+    <div><span>.</span><span>.</span><span>.</span></div>
+  </div>
 </template>
 
 <style scoped>
 /* Preloader */
 #preloader {
+  display: grid;
+  place-items: center;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -12px;
+  top: 0;
+  left: 0;
   z-index: 99999;
   opacity: 1;
   transition: all 0.15s linear;
   pointer-events: none;
+  height: 100%;
+  width: 100%;
+  @apply bg-primary;
 }
 #preloader span {
   font-size: 28px;
