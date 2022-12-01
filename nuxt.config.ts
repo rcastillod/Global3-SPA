@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss', 
     '@nuxtjs/color-mode', 
     '@pinia/nuxt',
-    '@nuxtjs/apollo'
+    '@nuxtjs/apollo',
   ],
   apollo: {
     clients: {
