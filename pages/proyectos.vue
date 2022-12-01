@@ -19,12 +19,12 @@
           />
         </div>
 
-        <!-- <Pagination
+        <Pagination
           :posts="data"
           :postsQuery="query"
           @updatePosts="updatePosts"
           :limit="10"
-        /> -->
+        />
       </LayoutSiteSection>
     </section>
   </div>
