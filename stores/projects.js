@@ -11,8 +11,8 @@ export const projectStore = defineStore('projects', {
     async setProjects() {
       try {
         const query = gql`
-          query proyectos {
-            proyectos(first: 20) {
+          query proyectos($numProjects: Int!, $cursor: String) {
+            proyectos(first: $numProjects, after: $cursor) {
               nodes {
                 databaseId
                 imagenProyecto {
@@ -25,7 +25,8 @@ export const projectStore = defineStore('projects', {
             }
           }
         `
-        const { data } = await useAsyncQuery(query);
+        const variables = { numProjects: 5, cursor: null }
+        const { data } = await useAsyncQuery(query, variables);
         this.projects = data.value.proyectos.nodes
       } catch (error) {
         console.log(error)
