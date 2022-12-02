@@ -17,6 +17,9 @@
             data-aos-duration="1000"
             :data-aos-delay="`${index}00`"
           />
+
+          <!-- <p v-if="loading">loading...</p>
+          <pre v-else>{{ result }}</pre> -->
         </div>
         <button
           class="bg-green-200 hover:bg-green-300 p-2 rounded"
@@ -24,109 +27,105 @@
         >
           Load More
         </button>
-        <!-- <Pagination
-          :posts="data"
-          :postsQuery="query"
-          @updatePosts="updatePosts"
-          :limit="10"
-        /> -->
       </LayoutSiteSection>
     </section>
   </div>
 </template>
 
 <script setup>
-import { onMounted, computed } from "vue";
-import { projectStore } from "~/stores/projects";
+import { ref, computed } from "vue";
 import gql from "graphql-tag";
 
 definePageMeta({ layout: "page" });
 
-const storeProjects = projectStore();
-// // Call projectStore action
-storeProjects.setProjects();
+const numberOfProjects = ref(20);
+
+const { result, loading, fetchMore } = await useQuery(
+  gql`
+    query proyectos($first: Int!, $endCursor: String) {
+      proyectos(first: $first, after: $endCursor) {
+        nodes {
+          databaseId
+          imagenProyecto {
+            imagen {
+              sourceUrl
+            }
+          }
+          title
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+          hasPreviousPage
+          startCursor
+        }
+      }
+    }
+  `,
+  {
+    first: numberOfProjects.value,
+  }
+);
 
 const projects = computed(() => {
-  return data.value.proyectos.nodes;
+  return result.value.proyectos.nodes;
 });
 
 const endCursor = computed(() => {
-  return data.value.proyectos.pageInfo.endCursor;
+  return result.value.proyectos.pageInfo.endCursor;
 });
 
 const loadMore = () => {
   fetchMore({
     variables: {
-      // Update the endCursor
+      first: numberOfProjects.value,
       endCursor: endCursor.value,
     },
     updateQuery(prev, { fetchMoreResult }) {
+      // Make a copy of existing data
       console.log(fetchMoreResult);
+      const mergedData = {
+        ...prev,
+      };
+
+      // Merge nodes
+      mergedData.proyectos = {
+        ...prev.proyectos,
+        nodes: [...prev.proyectos.nodes, ...fetchMoreResult.proyectos.nodes],
+      };
+
+      // Update endCursor
+      mergedData.proyectos.pageInfo = fetchMoreResult.proyectos.pageInfo;
+
+      return mergedData;
     },
   });
 };
 
-const query = gql`
-  query proyectos($first: Int!) {
-    proyectos(first: $first) {
-      nodes {
-        databaseId
-        imagenProyecto {
-          imagen {
-            sourceUrl
-          }
-        }
-        title
-      }
-      pageInfo {
-        endCursor
-        hasNextPage
-        hasPreviousPage
-        startCursor
-      }
-    }
-  }
-`;
-const { data } = await useAsyncQuery(query, { first: 2 });
-console.log(data);
-
-// const queryTest = async () => {
-//   try {
-//     const query = gql`
-//       query proyectos($first: Int!) {
-//         proyectos(first: $first) {
-//           edges {
-//             cursor
-//             node {
-//               databaseId
-//               imagenProyecto {
-//                 imagen {
-//                   sourceUrl
-//                 }
-//               }
-//               title
-//             }
-//           }
-//           pageInfo {
-//             endCursor
-//             hasNextPage
-//             hasPreviousPage
-//             startCursor
+// const fetchProjects = gql`
+//   query proyectos($first: Int!, $endCursor: String) {
+//     proyectos(first: $first, after: $endCursor) {
+//       nodes {
+//         databaseId
+//         imagenProyecto {
+//           imagen {
+//             sourceUrl
 //           }
 //         }
+//         title
 //       }
-//     `;
-//     const variables = {
-//       first: 5,
-//     };
-//     const { data, fetchMore } = await useAsyncQuery(query, variables);
-//     console.log(data);
-//   } catch (error) {
-//     console.log(error);
+//       pageInfo {
+//         endCursor
+//         hasNextPage
+//         hasPreviousPage
+//         startCursor
+//       }
+//     }
 //   }
+// `;
+// const variables = {
+//   first: numberOfProjects.value,
+//   offset: endCursor.value,
 // };
-
-// onMounted(() => {
-//   queryTest();
-// });
+// const { result, fetchMore } = useQuery(fetchProjects, variables);
 </script>
