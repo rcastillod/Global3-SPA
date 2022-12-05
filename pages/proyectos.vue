@@ -17,16 +17,26 @@
             data-aos-duration="1000"
             :data-aos-delay="`${index}00`"
           />
-
-          <!-- <p v-if="loading">loading...</p>
-          <pre v-else>{{ result }}</pre> -->
         </div>
-        <button
-          class="bg-green-200 hover:bg-green-300 p-2 rounded"
-          @click="loadMore"
-        >
-          Load More
-        </button>
+        <div class="w-full flex justify-center mt-20 gap-4">
+          <button
+            v-if="result.proyectos.pageInfo.hasPreviousPage"
+            @click="prevProjects"
+            class="inline-block bg-gradient-to-r from-orange-1 via-orange-2 to-orange-3 text-white py-2 px-5 rounded hover:shadow-lg hover:shadow-orange-1/40 transition-all ease-in-out duration-500 link"
+          >
+            Anterior
+          </button>
+          <button
+            v-if="result.proyectos.pageInfo.hasNextPage"
+            @click="nextProjects"
+            class="inline-block bg-gradient-to-r from-orange-1 via-orange-2 to-orange-3 text-white py-2 px-5 rounded hover:shadow-lg hover:shadow-orange-1/40 transition-all ease-in-out duration-500 link"
+          >
+            Siguiente
+          </button>
+          <div class="loader" v-if="loading">
+            <span>.</span><span>.</span><span>.</span>
+          </div>
+        </div>
       </LayoutSiteSection>
     </section>
   </div>
@@ -42,8 +52,8 @@ const numberOfProjects = ref(20);
 
 const { result, loading, fetchMore } = await useQuery(
   gql`
-    query proyectos($first: Int!, $endCursor: String) {
-      proyectos(first: $first, after: $endCursor) {
+    query proyectos($first: Int, $last: Int, $after: String, $before: String) {
+      proyectos(first: $first, last: $last, after: $after, before: $before) {
         nodes {
           databaseId
           imagenProyecto {
@@ -71,19 +81,21 @@ const projects = computed(() => {
   return result.value.proyectos.nodes;
 });
 
+const startCursor = computed(() => {
+  return result.value.proyectos.pageInfo.startCursor;
+});
 const endCursor = computed(() => {
   return result.value.proyectos.pageInfo.endCursor;
 });
 
-const loadMore = () => {
+const nextProjects = () => {
   fetchMore({
     variables: {
       first: numberOfProjects.value,
-      endCursor: endCursor.value,
+      after: endCursor.value,
     },
     updateQuery(prev, { fetchMoreResult }) {
       // Make a copy of existing data
-      console.log(fetchMoreResult);
       const mergedData = {
         ...prev,
       };
@@ -91,41 +103,80 @@ const loadMore = () => {
       // Merge nodes
       mergedData.proyectos = {
         ...prev.proyectos,
-        nodes: [...prev.proyectos.nodes, ...fetchMoreResult.proyectos.nodes],
+        nodes: [...fetchMoreResult.proyectos.nodes],
       };
 
       // Update endCursor
       mergedData.proyectos.pageInfo = fetchMoreResult.proyectos.pageInfo;
+
+      // Scroll to top after update query
+      window.scrollTo(0, 0);
 
       return mergedData;
     },
   });
 };
 
-// const fetchProjects = gql`
-//   query proyectos($first: Int!, $endCursor: String) {
-//     proyectos(first: $first, after: $endCursor) {
-//       nodes {
-//         databaseId
-//         imagenProyecto {
-//           imagen {
-//             sourceUrl
-//           }
-//         }
-//         title
-//       }
-//       pageInfo {
-//         endCursor
-//         hasNextPage
-//         hasPreviousPage
-//         startCursor
-//       }
-//     }
-//   }
-// `;
-// const variables = {
-//   first: numberOfProjects.value,
-//   offset: endCursor.value,
-// };
-// const { result, fetchMore } = useQuery(fetchProjects, variables);
+const prevProjects = () => {
+  fetchMore({
+    variables: {
+      first: null,
+      after: null,
+      last: numberOfProjects.value,
+      before: startCursor.value,
+    },
+    updateQuery(prev, { fetchMoreResult }) {
+      // Make a copy of existing data
+      const mergedData = {
+        ...prev,
+      };
+
+      // Merge nodes
+      mergedData.proyectos = {
+        ...prev.proyectos,
+        nodes: [...fetchMoreResult.proyectos.nodes],
+      };
+
+      // Update endCursor
+      mergedData.proyectos.pageInfo = fetchMoreResult.proyectos.pageInfo;
+
+      // Scroll to top after update query
+      window.scrollTo(0, 0);
+
+      return mergedData;
+    },
+  });
+};
 </script>
+
+<style scoped>
+.loader span {
+  font-size: 28px;
+  line-height: 0;
+  color: #fff;
+  animation-name: blink;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+.loader span:first-child {
+  padding-left: 2px;
+}
+.loader span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.loader span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+</style>
