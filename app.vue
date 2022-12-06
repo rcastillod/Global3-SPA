@@ -45,6 +45,7 @@ nuxtApp.hook("page:finish", () => {
 html,
 body {
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 body {
   @apply bg-primary dark:bg-background-color-light relative;

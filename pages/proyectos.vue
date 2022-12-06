@@ -8,14 +8,16 @@
       >
         <div
           class="proyectos grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-14"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          :data-aos-delay="`${index}00`"
         >
+          <LayoutSkeletonProjectCard v-if="loading" v-for="items in 20" />
           <LayoutProjectCard
+            v-else
             v-for="(project, index) in projects"
             :key="project.id"
             :project="project"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            :data-aos-delay="`${index}00`"
           />
         </div>
         <div class="w-full flex justify-center mt-20 gap-4">
@@ -33,9 +35,6 @@
           >
             Siguiente
           </button>
-          <div class="loader" v-if="loading">
-            <span>.</span><span>.</span><span>.</span>
-          </div>
         </div>
       </LayoutSiteSection>
     </section>
@@ -43,7 +42,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import gql from "graphql-tag";
 
 definePageMeta({ layout: "page" });
@@ -89,6 +88,9 @@ const endCursor = computed(() => {
 });
 
 const nextProjects = () => {
+  // Scroll to top after update query
+  window.scrollTo(0, 400);
+
   fetchMore({
     variables: {
       first: numberOfProjects.value,
@@ -109,15 +111,15 @@ const nextProjects = () => {
       // Update endCursor
       mergedData.proyectos.pageInfo = fetchMoreResult.proyectos.pageInfo;
 
-      // Scroll to top after update query
-      window.scrollTo(0, 0);
-
       return mergedData;
     },
   });
 };
 
 const prevProjects = () => {
+  // Scroll to top after update query
+  window.scrollTo(0, 400);
+
   fetchMore({
     variables: {
       first: null,
@@ -140,13 +142,12 @@ const prevProjects = () => {
       // Update endCursor
       mergedData.proyectos.pageInfo = fetchMoreResult.proyectos.pageInfo;
 
-      // Scroll to top after update query
-      window.scrollTo(0, 0);
-
       return mergedData;
     },
   });
 };
+
+onMounted(() => {});
 </script>
 
 <style scoped>
