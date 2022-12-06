@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode', 
     '@pinia/nuxt',
     '@nuxtjs/apollo',
+    '@nuxt/image-edge',
   ],
   apollo: {
     clients: {

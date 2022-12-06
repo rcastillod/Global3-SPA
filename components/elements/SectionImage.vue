@@ -1,5 +1,11 @@
 <template>
-  <img :src="`${img}`" :alt="img" :class="class" />
+  <nuxt-img
+    format="webp"
+    loading="lazy"
+    :src="`${img}`"
+    :alt="img"
+    :class="class"
+  />
 </template>
 
 <script setup>
