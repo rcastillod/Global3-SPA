@@ -1,7 +1,7 @@
 <template>
   <div
     class="mx-auto py-20 md:py-36"
-    :class="full == true ? 'w-full px-0' : 'max-w-screen-xl px-4 md:px-8'"
+    :class="[full ? 'w-full px-0' : 'max-w-screen-xl px-4 md:px-8']"
   >
     <p
       v-if="subtitle"
