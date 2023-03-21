@@ -1,3 +1,45 @@
+<script setup>
+definePageMeta({ layout: "page" });
+
+const config = useRuntimeConfig();
+const { data, refresh, pending } = await useFetch(config.public.wordpressUrl, {
+  method: "post",
+  body: {
+    query: `
+      query agenciaPage {
+        page(id: 606, idType: DATABASE_ID) {
+          id
+          title
+          databaseId
+          uri
+          empresa {
+            nuestraEmpresa {
+              anteTitulo
+              titulo
+              descripcion
+              imagen {
+                sourceUrl
+              }
+            }
+            filosofia {
+              anteTitulo
+              titulo
+              descripcion
+              imagen {
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
+    `,
+  },
+  transform(data) {
+    return data.data.page.empresa;
+  },
+});
+</script>
+
 <template>
   <div>
     <!-- Empresa -->
@@ -13,35 +55,20 @@
             data-aos="flip-down"
             data-aos-duration="1000"
           >
-            Nuestra Empresa
+            {{ data.nuestraEmpresa.anteTitulo }}
           </p>
           <h3
             class="text-white dark:text-primary text-4xl font-arimo uppercase mt-8 tracking-wider"
             data-aos="flip-up"
             data-aos-duration="1000"
           >
-            Ideas únicas para soluciones digitales
+            {{ data.nuestraEmpresa.titulo }}
           </h3>
           <div class="space-y-6 mr-0 md:mr-10">
-            <p class="text-grey-dark dark:text-grey-light">
-              Global3 es una empresa de consultoría profesional especializada en
-              Diseño Web, Posicionamiento en Buscadores SEO, Comercio
-              Electrónico y Desarrollo Web Avanzado. Utilizando las últimas
-              tecnologías, junto con una buena dosis de creatividad y
-              profesionalismo, vamos a trabajar estrechamente con usted para
-              proporcionar una solución completa e íntegra a su web, la
-              impresión y las necesidades de comunicación visual.
-            </p>
-            <p class="text-grey-dark dark:text-grey-light">
-              A diferencia de muchas empresas de diseño web, nos esforzamos en
-              crear un retorno positivo sobre la inversión para nuestros
-              clientes. Hemos dedicado años de esfuerzo para comprender las
-              muchas variables implicadas en la optimización de motores de
-              búsqueda. Nuestro equipo de diseñadores web experimentados y
-              creativos, desarrolladores y escritores de contenido le ayudarán a
-              aumentar la exposición de su sitio web y maximizar su ganancia
-              real de poder o de tráfico.
-            </p>
+            <p
+              class="text-grey-dark dark:text-grey-light"
+              v-html="data.nuestraEmpresa.descripcion"
+            ></p>
           </div>
         </div>
         <div
@@ -49,7 +76,7 @@
           data-aos="fade-left"
           data-aos-duration="1000"
         >
-          <ElementsSectionImage img="agencia.jpg" />
+          <ElementsSectionImage :img="data.nuestraEmpresa.imagen.sourceUrl" />
         </div>
       </LayoutPageSection>
     </section>
@@ -72,7 +99,7 @@
           data-aos="fade-right"
           data-aos-duration="1000"
         >
-          <ElementsSectionImage img="filosofia.png" />
+          <ElementsSectionImage :img="data.filosofia.imagen.sourceUrl" />
         </div>
         <div
           class="col-span-12 md:col-span-6 space-y-6 ml-0 md:ml-14"
@@ -80,21 +107,18 @@
           data-aos-duration="1000"
         >
           <p class="text-grey-dark dark:text-grey-light text-xl">
-            ¿Por qué elegirnos?
+            {{ data.filosofia.anteTitulo }}
           </p>
           <h3
             class="text-white dark:text-primary text-4xl font-arimo uppercase mt-8 tracking-wider"
           >
-            Filosofía de trabajo
+            {{ data.filosofia.titulo }}
           </h3>
           <div class="space-y-6 mr-0 md:mr-10">
-            <p class="text-grey-dark dark:text-grey-light">
-              La ventaja diferencial de la contratación de nuestros servicios
-              para desarrollar la presencia online de su negocio es nuestro
-              conocimiento y capacidad, junto con nuestro fuerte enfoque en la
-              generación de un retorno positivo sobre la inversión para nuestros
-              clientes.
-            </p>
+            <p
+              class="text-grey-dark dark:text-grey-light"
+              v-html="data.filosofia.descripcion"
+            ></p>
           </div>
         </div>
       </LayoutPageSection>
@@ -108,10 +132,6 @@
     </section>
   </div>
 </template>
-
-<script>
-definePageMeta({ layout: "page" });
-</script>
 
 <style scoped>
 .marquee-wrapper::before,

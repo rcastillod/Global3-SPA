@@ -26,6 +26,11 @@ export default defineNuxtConfig({
     '@nuxtjs/apollo',
     '@nuxt/image-edge',
   ],
+  runtimeConfig: {
+    public: {
+      wordpressUrl: 'https://v2.global3.cl/graphql'
+    }
+  },
   apollo: {
     clients: {
       default: {
