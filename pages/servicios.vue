@@ -1,11 +1,11 @@
 <script setup>
-import { servicesStore } from "~/stores/services";
+import { servicesStore } from '~/stores/services'
 
-definePageMeta({ layout: "page" });
+definePageMeta({ layout: 'page' })
 
-const storeServices = servicesStore();
+const storeServices = servicesStore()
 // Call servicesStore action
-storeServices.setServices();
+storeServices.setServices()
 </script>
 
 <template>
