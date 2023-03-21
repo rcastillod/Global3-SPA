@@ -31,6 +31,11 @@ export default defineNuxtConfig({
       wordpressUrl: 'https://v2.global3.cl/graphql'
     }
   },
+  routeRules: {
+    '/**': {
+      cors: true
+    }
+  },
   apollo: {
     clients: {
       default: {
@@ -39,7 +44,7 @@ export default defineNuxtConfig({
     },
   },
   tailwindcss: {
-    cssPath: '~/assets/ss/tailwind.css',
+    cssPath: '~/assets/css/tailwind.css',
     configPath: 'tailwind.config.js',
     exposeConfig: false,
     config: {},
