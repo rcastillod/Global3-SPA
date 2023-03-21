@@ -1,3 +1,13 @@
+<script setup>
+import { servicesStore } from "~/stores/services";
+
+definePageMeta({ layout: "page" });
+
+const storeServices = servicesStore();
+// Call servicesStore action
+storeServices.setServices();
+</script>
+
 <template>
   <div>
     <section class="w-full md:mt-10">
@@ -35,13 +45,3 @@
     </section>
   </div>
 </template>
-
-<script setup>
-import { servicesStore } from "~/stores/services";
-
-definePageMeta({ layout: "page" });
-
-const storeServices = servicesStore();
-// Call servicesStore action
-storeServices.setServices();
-</script>
