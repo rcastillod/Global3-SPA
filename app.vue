@@ -16,7 +16,10 @@ import "aos/dist/aos.css";
 
 // AOS
 onMounted(() => {
-  AOS.init({ disable: "false" });
+  AOS.init({
+    disable: "false",
+    once: true,
+  });
 });
 
 // Scroll to top when navigate through pages
