@@ -9,24 +9,27 @@ export const servicesStore = defineStore('services', {
     async setServices() {
       try {
         const query = gql`
-          query servicios {
-            servicios {
-              nodes {
-                databaseId
-                title(format: RENDERED)
-                content(format: RENDERED)
-                excerpt(format: RENDERED)
-                iconoServicios {
-                  icono {
-                    sourceUrl
+        query {
+          servicios {
+            data {
+              attributes {
+                titulo
+                resumen
+                descripcion
+                icono {
+                  data {
+                    attributes {
+                      url
+                    }
                   }
                 }
               }
             }
           }
+        }
         `
         const { data } = await useAsyncQuery(query)
-        this.services = data.value.servicios.nodes
+        this.services = data.value.servicios.data
       } catch (error) {
         console.log(error)
         // let the form component display the error

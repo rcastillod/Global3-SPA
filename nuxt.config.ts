@@ -28,7 +28,8 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      wordpressUrl: 'https://v2.global3.cl/graphql'
+      wordpressUrl: 'http://global3headless.local/graphql',
+      strapiBaseUri: process.env.API_URL || "http://localhost:1337"
     }
   },
   routeRules: {
@@ -39,7 +40,11 @@ export default defineNuxtConfig({
   apollo: {
     clients: {
       default: {
-        httpEndpoint: 'https://v2.global3.cl/graphql',
+        httpEndpoint: process.env.BACKEND_URL || "http://localhost:1337/graphql",
+        // httpEndpoint: 'http://global3headless.local/graphql',
+        httpLinkOptions: {
+          credentials: 'include'
+        }
       }
     },
   },

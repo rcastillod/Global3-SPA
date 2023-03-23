@@ -7,7 +7,7 @@
       data-aos="flip-down"
       data-aos-duration="1000"
     >
-      {{ service.title }} /
+      {{ service.attributes.titulo }} /
     </h2>
   </div>
 </template>
@@ -16,9 +16,9 @@
 const props = defineProps({
   services: {
     type: Array,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 </script>
 
 <style scoped>

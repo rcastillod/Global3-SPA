@@ -29,7 +29,7 @@
         <div class="info-wrapper mt-4 md:mt-8 flex flex-col gap-2">
           <ul>
             <li v-for="service in storeServiceTitle.services">
-              {{ service.title }}
+              {{ service.attributes.titulo }}
             </li>
           </ul>
         </div>
@@ -88,9 +88,9 @@
 </template>
 
 <script setup>
-import { servicesStore } from "~/stores/services";
+import { servicesStore } from '~/stores/services'
 
-const storeServiceTitle = servicesStore();
+const storeServiceTitle = servicesStore()
 </script>
 
 <style scoped>

@@ -9,18 +9,19 @@ export const testimonialStore = defineStore('testimonials', {
     async setTestimonials() {
       try {
         const query = gql`
-          query testimonios {
+          query {
             testimonios {
-              nodes {
-                databaseId
-                content(format: RENDERED)
-                title(format: RENDERED)
+              data {
+                attributes {
+                  nombre
+                  texto
+                }
               }
             }
           }
         `
         const { data } = await useAsyncQuery(query)
-        this.testimonials = data.value.testimonios.nodes
+        this.testimonials = data.value.testimonios.data
       } catch (error) {
         return error
       }
