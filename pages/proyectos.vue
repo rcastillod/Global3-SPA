@@ -11,7 +11,7 @@ const variables = ref({
   limit: projectsLimit.value,
   start: projectsStart.value
 })
-const { result, loading, fetchMore } = await useQuery(
+const { data, pending, refresh } = await useAsyncQuery(
   gql`
     query ($limit: Int, $start: Int) {
       proyectos(pagination: { limit: $limit, start: $start }) {
@@ -39,115 +39,40 @@ const { result, loading, fetchMore } = await useQuery(
       }
     }
   `,
-  variables
+  variables.value
 )
 
 const projects = computed(() => {
-  return result.value.proyectos.data
+  return data.value.proyectos.data
 })
 
-// Load next group of project method
-const nextProjects = () => {
-  // Scroll to top after update query
-  window.scrollTo(0, 400)
-  // Use fetchMore to load more results in query
-  fetchMore({
-    variables: {
-      limit: projectsLimit.value,
-      start: (projectsStart.value += projectsLimit.value)
-    },
-    // Update the previous query
-    updateQuery(previousResult, { fetchMoreResult }) {
-      if (!fetchMoreResult) return previousResult
-
-      // Make a copy of existing data
-      const mergedData = {
-        ...previousResult
-      }
-      // Merge query data
-      mergedData.proyectos = {
-        ...previousResult.proyectos,
-        data: [...fetchMoreResult.proyectos.data]
-      }
-      // Update query meta pagination fields
-      mergedData.proyectos.meta = fetchMoreResult.proyectos.meta
-
-      console.log(mergedData)
-
-      return mergedData
-    }
-  })
-}
-
-// Load previous group of project method
-const prevProjects = () => {
-  // Scroll to top after update query
-  window.scrollTo(0, 400)
-  // Use fetchMore to load more results in query
-  fetchMore({
-    variables: {
-      limit: projectsLimit.value,
-      start: (projectsStart.value -= projectsLimit.value)
-    },
-    updateQuery(previousResult, { fetchMoreResult }) {
-      // Make a copy of existing data
-      const mergedData = {
-        ...previousResult
-      }
-      // Merge query data
-      mergedData.proyectos = {
-        ...previousResult.proyectos,
-        data: [...fetchMoreResult.proyectos.data]
-      }
-
-      // Update query meta pagination fields
-      mergedData.proyectos.meta = fetchMoreResult.proyectos.meta
-
-      return mergedData
-    }
-  })
+// Load more projects method
+const loadMoreProjects = () => {
+  // Use refresh to load more results in query
+  if (
+    data.value.proyectos.meta.pagination.page <
+    data.value.proyectos.meta.pagination.pageCount
+  ) {
+    // Reasign limit variable plus 20
+    variables.value.limit = variables.value.limit + 20
+    // Refresh de data
+    refresh()
+  }
 }
 </script>
 
 <template>
   <div>
     <section class="w-full md:mt-10 px-4 md:px-8">
-      <LayoutSiteSection
-        :full="true"
-        subtitle="Descubre nuestros casos"
-        title="Últimos proyectos"
-      >
-        <div
-          class="proyectos grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-14"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          <LayoutSkeletonProjectCard v-if="loading" v-for="items in 10" />
-          <LayoutProjectCard
-            v-else
-            v-for="(project, index) in projects"
-            :key="project.attributes.id"
-            :project="project"
-          />
+      <LayoutSiteSection :full="true" subtitle="Descubre nuestros casos" title="Últimos proyectos">
+        <div class="proyectos grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-14">
+          <LayoutProjectCard v-for="(project, index) in projects" :key="project.attributes.id" :project="project"
+            data-aos="fade-up" data-aos-duration="1000" />
+          <LayoutSkeletonProjectCard v-if="pending" v-for="items in 20" />
         </div>
         <div class="w-full flex justify-center mt-20 gap-4">
-          <button
-            v-if="result.proyectos.meta.pagination.page > 1"
-            @click="prevProjects"
-            class="inline-block bg-gradient-to-r from-orange-1 via-orange-2 to-orange-3 text-white py-2 px-5 rounded hover:shadow-lg hover:shadow-orange-1/40 transition-all ease-in-out duration-500 link"
-          >
-            Anterior
-          </button>
-          <button
-            v-if="
-              result.proyectos.meta.pagination.page <
-              result.proyectos.meta.pagination.pageCount
-            "
-            @click="nextProjects"
-            class="inline-block bg-gradient-to-r from-orange-1 via-orange-2 to-orange-3 text-white py-2 px-5 rounded hover:shadow-lg hover:shadow-orange-1/40 transition-all ease-in-out duration-500 link"
-          >
-            Siguiente
-          </button>
+          <ElementsButtonTextAnim v-if="data.proyectos.meta.pagination.page < data.proyectos.meta.pagination.pageCount"
+            @click="loadMoreProjects" text="Cargar Más Cargar Más Cargar Más Cargar Más" :projects="true" />
         </div>
       </LayoutSiteSection>
     </section>

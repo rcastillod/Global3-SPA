@@ -15,7 +15,7 @@
     "@pinia/nuxt": "^0.4.3",
     "install": "^0.13.0",
     "npm": "^8.19.2",
-    "nuxt": "3.0.0-rc.11"
+    "nuxt": "3.3.0"
   },
   "dependencies": {
     "@vee-validate/rules": "^4.7.1",
