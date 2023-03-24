@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   },
   build: { transpile: ['yup', '@vee-validate/rules', 'gsap'] },
   modules: [
+    '@nuxt/devtools', 
     '@nuxtjs/tailwindcss', 
     '@nuxtjs/color-mode', 
     '@pinia/nuxt',

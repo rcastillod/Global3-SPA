@@ -4,30 +4,44 @@ import gql from 'graphql-tag'
 export const projectStore = defineStore('projects', {
   state: () => ({
     projects: null,
-    loader: true,
-    after: null
+    projectsMeta: null,
+    limit: 20,
   }),
   actions: {
     async setProjects() {
       try {
         const query = gql`
-          query proyectos($numProjects: Int!, $cursor: String) {
-            proyectos(first: $numProjects, after: $cursor) {
-              nodes {
-                databaseId
-                imagenProyecto {
+          query ($limit: Int, $start: Int) {
+            proyectos(pagination: { limit: $limit, start: $start }) {
+              data {
+                id
+                attributes {
+                  nombre
                   imagen {
-                    sourceUrl
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
                   }
                 }
-                title
+              }
+              meta {
+                pagination {
+                  total
+                  page
+                  pageSize
+                  pageCount
+                }
               }
             }
           }
         `
-        const variables = { numProjects: 5, cursor: null }
-        const { data } = await useAsyncQuery(query, variables);
-        this.projects = data.value.proyectos.nodes
+        const variables = { limit: this.limit }
+        const { data, pending, refresh } = await useAsyncQuery(query, variables);
+        this.projects = data.value.proyectos.data
+        this.projectsMeta = data.value.proyectos.meta
+
       } catch (error) {
         console.log(error)
         return error
