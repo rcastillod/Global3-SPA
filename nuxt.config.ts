@@ -40,7 +40,7 @@ export default defineNuxtConfig({
   apollo: {
     clients: {
       default: {
-        httpEndpoint: process.env.BACKEND_URL || "http://localhost:1337/graphql",
+        httpEndpoint: process.env.NODE_ENV === 'production' ? process.env.PROD_BACKEND_URL : process.env.BACKEND_URL,
         httpLinkOptions: {
           credentials: 'include'
         }
