@@ -5,8 +5,7 @@ definePageMeta({ layout: 'page' })
 
 const storeServices = servicesStore()
 // Call servicesStore action
-//storeServices.setServices()
-
+storeServices.setServices()
 </script>
 
 <template>

@@ -1,6 +1,27 @@
 import { defineStore } from 'pinia'
 import gql from 'graphql-tag'
 
+const SERVICES_QUERY = gql`
+query {
+  servicios {
+    data {
+      attributes {
+        titulo
+        resumen
+        descripcion
+        icono {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
+
 export const servicesStore = defineStore('services', {
   state: () => ({
     services: null,
@@ -8,30 +29,10 @@ export const servicesStore = defineStore('services', {
   actions: {
     async setServices() {
       try {
-        const query = gql`
-        query {
-          servicios {
-            data {
-              attributes {
-                titulo
-                resumen
-                descripcion
-                icono {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        `
-        const { data } = await useAsyncQuery(query)
+        const { data } = await useAsyncQuery(SERVICES_QUERY)
         this.services = data.value.servicios.data
       } catch (error) {
-        console.log(error)
+        console.error(error)
         // let the form component display the error
         return error
       }
