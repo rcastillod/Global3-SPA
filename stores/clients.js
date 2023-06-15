@@ -9,17 +9,14 @@ export const clientStore = defineStore('clients', {
     async setClients() {
       try {
         const query = gql`
-          query {
-            clientes {
-              data {
-                attributes {
-                  nombre
+          query clientes {
+            clientes(first: 1000) {
+              nodes {
+                clienteId
+                title(format: RENDERED)
+                clientes {
                   logo {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
+                    sourceUrl
                   }
                 }
               }
@@ -27,7 +24,7 @@ export const clientStore = defineStore('clients', {
           }
         `;
         const { data } = await useAsyncQuery(query);
-        this.clients = data.value.clientes.data
+        this.clients = data.value.clientes.nodes
       } catch (error) {
         return error
       }

@@ -20,7 +20,6 @@ export default defineNuxtConfig({
   },
   build: { transpile: ['yup', '@vee-validate/rules', 'gsap'] },
   modules: [
-    '@nuxt/devtools', 
     '@nuxtjs/tailwindcss', 
     '@nuxtjs/color-mode', 
     '@pinia/nuxt',
@@ -29,7 +28,7 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      strapiBaseUri: process.env.API_URL || "http://localhost:1337"
+      wordpressUrl: 'https://v2.global3.cl/graphql'
     }
   },
   routeRules: {
@@ -40,10 +39,7 @@ export default defineNuxtConfig({
   apollo: {
     clients: {
       default: {
-        httpEndpoint: process.env.NODE_ENV === 'production' ? process.env.PROD_BACKEND_URL : process.env.BACKEND_URL,
-        httpLinkOptions: {
-          credentials: 'include'
-        }
+        httpEndpoint: 'https://v2.global3.cl/graphql',
       }
     },
   },
