@@ -5,41 +5,49 @@ definePageMeta({ layout: "page" });
 
 const { data, refresh, pending } = await useAsyncQuery(
   gql`
-      query agenciaPage {
-        page(id: 606, idType: DATABASE_ID) {
-          id
-          title
-          databaseId
-          uri
-          empresa {
-            nuestraEmpresa {
-              anteTitulo
-              titulo
-              descripcion
-              imagen {
-                sourceUrl
-              }
+    query agenciaPage {
+      page(id: 606, idType: DATABASE_ID) {
+        id
+        title
+        databaseId
+        uri
+        empresa {
+          nuestraEmpresa {
+            anteTitulo
+            titulo
+            descripcion
+            imagen {
+              sourceUrl
             }
-            filosofia {
-              anteTitulo
-              titulo
-              descripcion
-              imagen {
-                sourceUrl
-              }
+          }
+          filosofia {
+            anteTitulo
+            titulo
+            descripcion
+            imagen {
+              sourceUrl
             }
           }
         }
       }
-    `,
+    }
+  `,
 );
 
 const empresa = computed(() => {
-  return data.value.page.empresa.nuestraEmpresa
+  if (data && data.value && data.value.page.empresa.nuestraEmpresa) {
+    return data.value.page.empresa.nuestraEmpresa
+  } else {
+    return []
+  }
 })
 
 const filosofia = computed(() => {
-  return data.value.page.empresa.filosofia
+  if (data && data.value && data.value.page.empresa.filosofia) {
+    return data.value.page.empresa.filosofia
+  } else {
+    return []
+  }
 })
 
 </script>

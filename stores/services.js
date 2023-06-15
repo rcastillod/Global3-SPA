@@ -3,7 +3,7 @@ import gql from 'graphql-tag'
 
 export const servicesStore = defineStore('services', {
   state: () => ({
-    services: null,
+    services: null
   }),
   actions: {
     async setServices() {
@@ -25,10 +25,9 @@ export const servicesStore = defineStore('services', {
             }
           }
         `
-        const { data } = await useAsyncQuery(query)
+        const { data, pending } = await useAsyncQuery(query)
         this.services = data.value.servicios.nodes
       } catch (error) {
-        console.log(error)
         // let the form component display the error
         return error
       }
