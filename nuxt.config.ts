@@ -20,8 +20,8 @@ export default defineNuxtConfig({
   },
   build: { transpile: ['yup', '@vee-validate/rules', 'gsap'] },
   modules: [
-    '@nuxtjs/tailwindcss', 
-    '@nuxtjs/color-mode', 
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
     '@pinia/nuxt',
     '@nuxtjs/apollo',
     '@nuxt/image-edge',
@@ -29,11 +29,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       wordpressUrl: 'https://v2.global3.cl/graphql'
-    }
-  },
-  routeRules: {
-    '/**': {
-      cors: true
     }
   },
   apollo: {
