@@ -1,11 +1,7 @@
 <template>
   <NuxtLayout>
     <NuxtPage />
-    <ElementsCustomCursor
-      scaleElement="link"
-      dotColor="#FF6100"
-      borderColor="#FF6100"
-    />
+    <ElementsCustomCursor scaleElement="link" dotColor="#FF6100" borderColor="#FF6100" />
   </NuxtLayout>
 </template>
 
@@ -30,18 +26,6 @@ nuxtApp.hook("page:finish", () => {
 </script>
 
 <style>
-/* -------------------------------------------------------------------------- */
-/*                               TRANSITION PAGE                               */
-/* -------------------------------------------------------------------------- */
-/* .layout-enter-active,
-.layout-leave-active {
-  transition: all 0.4s;
-}
-.layout-enter-from,
-.layout-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
-} */
 /* -------------------------------------------------------------------------- */
 /*                                   GLOBAL                                   */
 /* -------------------------------------------------------------------------- */
