@@ -22,7 +22,7 @@ const handleClearError = () => clearError({ redirect: '/' })
       <Elements404Svg class="col-span-8" data-aos="zoom-in" data-aos-duration="500" />
       <div class="col-span-4" data-aos="fade-up" data-aos-duration="1000">
         <h3 class="text-white dark:text-primary text-4xl font-arimo uppercase mt-8 tracking-wider mb-10">
-          Lo sentimos pero esta pagina no existe
+          Lo sentimos pero esta pagina no existe.
         </h3>
         <a class="inline-block bg-gradient-to-r from-orange-1 via-orange-2 to-orange-3 text-white py-2 px-5 rounded hover:shadow-lg hover:shadow-orange-1/40 transition-all ease-in-out duration-500 link"
           @click="handleClearError">Volver al Home</a>
