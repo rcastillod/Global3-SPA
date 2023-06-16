@@ -42,7 +42,7 @@ const supports = ref([
     title: "Presencial",
     content:
       "¡Nos preocupamos de nuestros clientes! Si requiere de soporte presencial puede ser solicitado por teléfono o correo electrónico.",
-    icono: "face-to-face.png",
+    icono: "../face-to-face.png",
     link: "",
     target: "",
   },
@@ -50,7 +50,7 @@ const supports = ref([
     title: "teamwiewer",
     content:
       "El soporte o capacitación virtual nos permite tomar control de los equipos remotos y explicar o solucionar el problema que puedan tener.",
-    icono: "teamviewer.png",
+    icono: "../teamviewer.png",
     link: "https://get.teamviewer.com/pxp53p8",
     target: "_blank",
   },
@@ -58,7 +58,7 @@ const supports = ref([
     title: "Telefónico / Email",
     content:
       "La forma más rápida y sencilla de solucionar tus dudas. Contáctanos a través de nuestro sitio o llámanos por teléfono para aclarar tus dudas.",
-    icono: "online.png",
+    icono: "../online.png",
     link: "",
     target: "",
   },
