@@ -38,26 +38,23 @@ onMounted(() => {
         e.target.closest(`.${props.scaleElement}`));
 
     vueCursor.style.cssText = `
-      transform: translate3d(${
-        e.clientX - props.circleSize + props.dotSize - 1
-      }px, ${e.clientY - props.circleSize + props.dotSize - 1}px, 0) scale(${
-      scaleElementHovered ? 1 : 0.5
-    });
+      transform: translate3d(${e.clientX - props.circleSize + props.dotSize - 1
+      }px, ${e.clientY - props.circleSize + props.dotSize - 1}px, 0) scale(${scaleElementHovered ? 1 : 0.5
+      });
         width: ${props.circleSize * 2}px;
         height: ${props.circleSize * 2}px;
         border-color: ${props.borderColor}
         `;
 
     vueCursorSmall.style.cssText = `
-      transform: translate3d(${e.clientX}px, ${e.clientY}px, 0) scale(${
-      scaleElementHovered ? 1 : 0.5
-    });
+      transform: translate3d(${e.clientX}px, ${e.clientY}px, 0) scale(${scaleElementHovered ? 1 : 0.5
+      });
       width: ${props.dotSize * 2}px;
       height: ${props.dotSize * 2}px;
       background-color: ${props.dotColor}`;
   });
 
-  if (route.name == "index") {
+  if (route.name === "index") {
     linkAnim.forEach((el) => {
       el.addEventListener("mouseenter", () => {
         vueCursor.classList.add("active");
@@ -67,6 +64,18 @@ onMounted(() => {
       });
     });
   }
+
+  if (route.name === "proyectos") {
+    linkAnim.forEach(el => {
+      el.addEventListener("mouseenter", () => {
+        vueCursor.classList.add("active", "plus-icon");
+      });
+      el.addEventListener("mouseleave", () => {
+        vueCursor.classList.remove("active", "plus-icon");
+      });
+    })
+  }
+
 });
 </script>
 
@@ -118,6 +127,9 @@ onMounted(() => {
     opacity: 0;
     transition: transform 400ms ease-in-out;
     transform: translate(-50%, -50%) scale(0);
+  }
+  .vueCursor.active.plus-icon::before {
+    content: url("/plus-link-icon.svg");
   }
   .vueCursor.active::after,
   .vueCursor.active::before {

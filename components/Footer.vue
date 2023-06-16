@@ -22,7 +22,7 @@
         <h5 class="text-grey-dark dark:text-grey-light text-xl">Servicios</h5>
         <div class="info-wrapper mt-4 md:mt-8 flex flex-col gap-2">
           <ul>
-            <li v-for="service in storeServiceTitle.services">
+            <li v-for="service in storeServices.services">
               {{ service.title }}
             </li>
           </ul>
@@ -58,7 +58,9 @@
 <script setup>
 import { servicesStore } from "~/stores/services";
 
-const storeServiceTitle = servicesStore();
+const storeServices = servicesStore()
+// Call servicesStore action
+storeServices.setServices()
 </script>
 
 <style scoped>

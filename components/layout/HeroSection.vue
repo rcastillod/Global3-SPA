@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="max-w-screen-2xl mx-auto py-40 px-4 md:px-8 md:py-36 md:pt-[15.625rem]"
-  >
+  <div class="max-w-screen-2xl mx-auto py-40 px-4 md:px-8 md:py-36 md:pt-[15.625rem]">
     <h1 class="hero-title font-bold lg:text-center">Creamos</h1>
     <div class="max-w-screen-lg mx-auto md:-mt-12 lg:-mt-16">
       <div class="flex flex-col lg:flex-row items-center">
@@ -17,9 +15,7 @@
           </div>
         </div>
         <div class="self-end">
-          <ElementsButtonRounded class="mt-0 md:-mt-20 lg:mt-0" url="/contacto"
-            >Contáctanos</ElementsButtonRounded
-          >
+          <ElementsButtonRounded class="mt-0 md:-mt-20 lg:mt-0" url="/contacto">Contáctanos</ElementsButtonRounded>
         </div>
       </div>
     </div>
