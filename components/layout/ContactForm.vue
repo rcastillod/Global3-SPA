@@ -1,3 +1,38 @@
+<script setup>
+import { configure } from "vee-validate";
+
+const handleSubmit = async (values, actions) => {
+
+  const formData = new FormData();
+  formData.append('wpcf7-nombre', values.nombre);
+  formData.append('wpcf7-correo', values.correo);
+  formData.append('wpcf7-mensaje', values.mensaje);
+
+  try {
+    const formId = '633';
+    const response = await $fetch(`https://v2.global3.cl/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback`, {
+      method: 'POST',
+      headers: {},
+      body: formData
+    })
+    actions.resetForm()
+    formSuccess.value = true
+  } catch (error) {
+    formSuccess.value = false
+  }
+}
+
+configure({
+  validateOnBlur: true,
+  validateOnChange: true,
+  validateOnInput: false,
+  validateOnModelUpdate: true,
+});
+
+const initialValues = { nombre: "", correo: "", mensaje: "" };
+const formSuccess = ref(false)
+</script>
+
 <template>
   <div class="px-14 pt-10 pb-16 bg-primary-shade dark:bg-white">
     <div class="space-y-4">
@@ -57,6 +92,19 @@
           </Transition>
         </VField>
       </div>
+      <Transition>
+        <template v-if="formSuccess != ''">
+          <div class="bg-white/5 rounded-md p-5">
+            <p v-if="formSuccess" class="text-orange-2">
+              {{
+                formSuccess ? 'Tu correo ha sido enviado, te contactaremos a la brevedad.'
+                :
+                'Ha ocurrido un error al enviar tu correo, por favor inténtalo nuevamente.'
+              }}
+            </p>
+          </div>
+        </template>
+      </Transition>
       <div>
         <button :disabled="!formMeta.valid" type="submit" :class="{
           'from-slate-400 via-slate-500 to-slate-600 text-white hover:shadow-slate-800 cursor-not-allowed':
@@ -69,24 +117,6 @@
     </VForm>
   </div>
 </template>
-
-<script setup>
-import { configure } from "vee-validate";
-
-const handleSubmit = (values, actions) => {
-  console.log(values);
-  actions.resetForm();
-};
-
-configure({
-  validateOnBlur: true,
-  validateOnChange: true,
-  validateOnInput: false,
-  validateOnModelUpdate: true,
-});
-
-const initialValues = { nombre: "", correo: "", mensaje: "" };
-</script>
 
 <style scoped>
 .v-enter-active,
