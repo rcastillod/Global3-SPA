@@ -12,7 +12,7 @@
     </div>
     <div class="text h-full w-full absolute">
       <p>
-        <span v-for="(split, index) in textSplit" class="absolute left-2/4 text-white"
+        <span v-for="(split, index) in textSplit" class="absolute left-2/4 text-white dark:text-primary"
           :style="[`transform: rotate(${index * 8.1}deg)`]">
           {{ split }}
         </span>
