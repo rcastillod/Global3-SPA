@@ -4,7 +4,7 @@
     <section class="w-full md:mt-10">
       <LayoutPageSection class="items-center">
         <div class="col-span-12 md:col-span-6 mt-10 md:mt-0" data-aos="fade-right" data-aos-duration="1000">
-          <ElementsSectionImage img="soporte.jpg" />
+          <ElementsSectionImage img="soporte.jpg" class="w-full" />
         </div>
         <div class="col-span-12 md:col-span-6 space-y-6 md:ml-14 mt-10 md:mt-0" data-aos="fade-left"
           data-aos-duration="1000">

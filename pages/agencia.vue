@@ -70,7 +70,7 @@ const filosofia = computed(() => {
           </div>
         </div>
         <div class="col-span-12 md:col-span-6 mt-10 md:mt-0" data-aos="fade-left" data-aos-duration="1000">
-          <ElementsSectionImage :img="empresa.imagen.sourceUrl" />
+          <ElementsSectionImage :img="empresa.imagen.sourceUrl" class="w-full" />
         </div>
       </LayoutPageSection>
     </section>
@@ -84,7 +84,7 @@ const filosofia = computed(() => {
     <section class="w-full">
       <LayoutPageSection class="items-center">
         <div class="col-span-12 md:col-span-6 mb-10 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
-          <ElementsSectionImage :img="filosofia.imagen.sourceUrl" />
+          <ElementsSectionImage :img="filosofia.imagen.sourceUrl" class="w-full" />
         </div>
         <div class="col-span-12 md:col-span-6 space-y-6 ml-0 md:ml-14" data-aos="fade-left" data-aos-duration="1000">
           <p class="text-grey-dark dark:text-grey-light text-xl">
