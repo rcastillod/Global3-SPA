@@ -39,8 +39,7 @@ onMounted(() => {
         <ElementsImageBlur :src="service.iconoServicios.icono.sourceUrl" :alt="service.title" :width="70" />
       </div>
       <div class="card-title mb-5">
-        <div
-          class="text-xl text-white dark:text-primary transition-colors duration-1000 ease-in-out group-hover:text-orange-2">
+        <div class="text-xl text-white dark:text-primary">
           {{ service.title }}
         </div>
       </div>

@@ -47,7 +47,7 @@ const supports = ref([
     target: "",
   },
   {
-    title: "teamwiewer",
+    title: "Teamwiewer",
     content:
       "El soporte o capacitación virtual nos permite tomar control de los equipos remotos y explicar o solucionar el problema que puedan tener.",
     icono: "../teamviewer.png",

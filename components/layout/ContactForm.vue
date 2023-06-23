@@ -34,7 +34,7 @@ const formSuccess = ref(false)
 </script>
 
 <template>
-  <div class="px-6 md:px-14 pt-10 pb-16 bg-primary-shade dark:bg-white">
+  <div class="px-6 md:px-14 pt-10 pb-16 bg-white/5 dark:bg-white rounded-xl">
     <div class="space-y-4">
       <h3 class="text-white dark:text-primary text-2xl font-arimo uppercase tracking-wider">
         Escribanos
@@ -51,7 +51,7 @@ const formSuccess = ref(false)
           class="after:content-['*'] after:ml-0.5 after:text-orange-2 text-white dark:text-primary">Nombre</label>
         <VField name="nombre" v-slot="{ field, meta, errors }" rules="requiredName">
           <input v-bind="field"
-            class="bg-primary dark:bg-white text-white dark:text-primary border border-border-color dark:border-border-color-light rounded-md p-3"
+            class="bg-primary/20 dark:bg-white text-white dark:text-primary border border-border-color dark:border-border-color-light rounded-md p-3"
             :class="{
               'text-lime-200': meta.valid && meta.touched,
               'text-orange-2': !meta.valid && meta.touched,
@@ -67,7 +67,7 @@ const formSuccess = ref(false)
           Electrónico</label>
         <VField name="correo" v-slot="{ field, meta, errors }" rules="email">
           <input v-bind="field"
-            class="bg-primary dark:bg-white text-white dark:text-primary border border-border-color dark:border-border-color-light rounded-md p-3"
+            class="bg-primary/20 dark:bg-white text-white dark:text-primary border border-border-color dark:border-border-color-light rounded-md p-3"
             :class="{
               'text-lime-200': meta.valid && meta.touched,
               'text-orange-2': !meta.valid && meta.touched,
@@ -82,7 +82,7 @@ const formSuccess = ref(false)
           class="after:content-['*'] after:ml-0.5 after:text-orange-2 text-white dark:text-primary">Mensaje</label>
         <VField name="mensaje" v-slot="{ field, meta, errors }" rules="requiredMessage">
           <textarea v-bind="field"
-            class="bg-primary dark:bg-white text-white dark:text-primary border border-border-color dark:border-border-color-light rounded-md p-3"
+            class="bg-primary/20 dark:bg-white text-white dark:text-primary border border-border-color dark:border-border-color-light rounded-md p-3"
             :class="{
               'text-lime-200': meta.valid && meta.touched,
               'text-orange-2': !meta.valid && meta.touched,
