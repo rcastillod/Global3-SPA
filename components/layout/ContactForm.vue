@@ -34,13 +34,13 @@ const formSuccess = ref(false)
 </script>
 
 <template>
-  <div class="px-14 pt-10 pb-16 bg-primary-shade dark:bg-white">
+  <div class="px-6 md:px-14 pt-10 pb-16 bg-primary-shade dark:bg-white">
     <div class="space-y-4">
       <h3 class="text-white dark:text-primary text-2xl font-arimo uppercase tracking-wider">
         Escribanos
       </h3>
       <p class="text-grey-dark dark:text-grey-light text-sm">
-        Su dirección de correo electrónico no será publicada. Los campos
+        Tu dirección de correo electrónico no será publicada. Los campos
         obligatorios están marcados *
       </p>
     </div>

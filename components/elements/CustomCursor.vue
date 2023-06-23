@@ -57,10 +57,10 @@ onMounted(() => {
   if (route.name === "index") {
     linkAnim.forEach((el) => {
       el.addEventListener("mouseenter", () => {
-        vueCursor.classList.add("active");
+        vueCursor.classList.add("active-arrow");
       });
       el.addEventListener("mouseleave", () => {
-        vueCursor.classList.remove("active");
+        vueCursor.classList.remove("active-arrow");
       });
     });
   }
@@ -68,10 +68,10 @@ onMounted(() => {
   if (route.name === "proyectos") {
     linkAnim.forEach(el => {
       el.addEventListener("mouseenter", () => {
-        vueCursor.classList.add("active", "plus-icon");
+        vueCursor.classList.add("active-arrow", "active-plus");
       });
       el.addEventListener("mouseleave", () => {
-        vueCursor.classList.remove("active", "plus-icon");
+        vueCursor.classList.remove("active-arrow", "active-plus");
       });
     })
   }
@@ -101,10 +101,12 @@ onMounted(() => {
     border: 1px solid #f00;
   }
 
-  .vueCursor.active {
+  .vueCursor.active-arrow,
+  .vueCursor.active-plus {
     border: none;
   }
-  .vueCursor::after {
+  .vueCursor.active-arrow::after,
+  .vueCursor.active-plus::after {
     content: "";
     animation: rotate 10s infinite linear;
     position: fixed;
@@ -115,32 +117,30 @@ onMounted(() => {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     border: 2px dashed white;
-    opacity: 0;
   }
-  .vueCursor::before {
+  .vueCursor.active-arrow::before,
+  .vueCursor.active-plus::before {
     content: url("/arrow-link-light.svg");
     position: fixed;
     top: 50%;
     left: 50%;
     height: 50%;
     width: 50%;
-    opacity: 0;
     transition: transform 400ms ease-in-out;
     transform: translate(-50%, -50%) scale(0);
   }
-  .vueCursor.active.plus-icon::before {
-    content: url("/plus-link-icon.svg");
-  }
-  .vueCursor.active::after,
-  .vueCursor.active::before {
-    opacity: 1;
+
+  .vueCursor.active-plus::before {
+    transform: translate(-50%, -50%) scale(0) rotate(90deg);
   }
 
-  .vueCursor.active::before {
+  .vueCursor.active-arrow::before,
+  .vueCursor.active-plus::before {
     transform: translate(-50%, -50%) scale(1);
   }
 
-  .vueCursor.active + .vueCursor--Small {
+  .vueCursor.active-arrow + .vueCursor--Small,
+  .vueCursor.active-plus + .vueCursor--Small {
     opacity: 0;
   }
 
