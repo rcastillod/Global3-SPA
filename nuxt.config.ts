@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     clients: {
       default: {
         httpEndpoint: 'https://v2.global3.cl/graphql',
+        credentials: 'include'
       }
     },
   },

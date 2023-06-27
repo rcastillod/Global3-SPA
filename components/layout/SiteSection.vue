@@ -1,24 +1,12 @@
 <template>
-  <div
-    class="mx-auto py-20 md:py-36"
-    :class="[full ? 'w-full px-0' : 'max-w-screen-xl px-4 md:px-8']"
-  >
-    <p
-      v-if="subtitle"
-      :class="subtitleAlignment"
-      class="text-grey-dark dark:text-grey-light text-xl"
-      data-aos="flip-down"
-      data-aos-duration="1000"
-    >
+  <div class="mx-auto py-20 md:py-28" :class="[full ? 'w-full px-0' : 'max-w-screen-xl px-4 md:px-8']">
+    <p v-if="subtitle" :class="subtitleAlignment" class="text-grey-dark dark:text-grey-light text-xl" data-aos="flip-down"
+      data-aos-duration="1000">
       {{ subtitle }}
     </p>
-    <h3
-      v-if="title"
-      :class="titleAlignment"
-      class="text-white dark:text-primary text-4xl font-arimo uppercase mt-5 tracking-wider"
-      data-aos="flip-up"
-      data-aos-duration="1000"
-    >
+    <h3 v-if="title" :class="titleAlignment"
+      class="text-white dark:text-primary text-4xl font-arimo uppercase mt-5 tracking-wider" data-aos="flip-up"
+      data-aos-duration="1000">
       {{ title }}
     </h3>
     <slot />

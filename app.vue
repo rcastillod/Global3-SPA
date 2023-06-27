@@ -57,7 +57,7 @@ body::before {
 
 /* Page Header */
 .page-header::after {
-  @apply bg-gradient-to-t from-primary dark:from-background-color-light;
+  @apply bg-gradient-to-t from-primary dark:content-none;
   content: "";
   position: absolute;
   bottom: 0;
