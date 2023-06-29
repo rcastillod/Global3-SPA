@@ -19,6 +19,6 @@ const props = defineProps({
 
 <style scoped>
 .service-title {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 2.7rem);
 }
 </style>
