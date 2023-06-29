@@ -7,10 +7,10 @@
           <h3 class="hero-subtitle font-semibold text-white dark:text-primary">
             Para que tu negocio crezca
           </h3>
-          <div class="hero-text mt-14 md:pr-60 lg:pr-80">
+          <div class="hero-text mt-14 md:pr-60 lg:pr-70">
             <p class="text-white dark:text-primary text-xl font-light">
-              Resolvemos los requerimientos digitales de nuestros clientes con
-              soluciones modernas y vanguardistas
+              Brindamos soluciones digitales modernas y vanguardistas para satisfacer las necesidades de nuestros
+              clientes. Nos enfocamos en ofrecer respuestas innovadoras y eficientes a los desafíos digitales actuales.
             </p>
           </div>
         </div>
