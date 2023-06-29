@@ -66,7 +66,7 @@ const filosofia = computed(() => {
             {{ empresa.titulo }}
           </h3>
           <div class="space-y-6 mr-0 md:mr-10">
-            <p class="text-grey-dark dark:text-grey-light" v-html="empresa.descripcion"></p>
+            <p class="text-grey-dark dark:text-grey-light text-justify" v-html="empresa.descripcion"></p>
           </div>
         </div>
         <div class="col-span-12 md:col-span-6 mt-10 md:mt-0" data-aos="fade-left" data-aos-duration="1000">

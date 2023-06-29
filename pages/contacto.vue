@@ -13,29 +13,29 @@
           </p>
           <h3 class="text-white dark:text-primary text-4xl font-arimo uppercase mt-8 tracking-wider" data-aos="flip-up"
             data-aos-duration="1000">
-            Comencemos a trabajar juntos. ¡Ponte en contacto con nosotros!
+            ¡No pierdas tiempo. Trabajemos juntos y alcanza el éxito que mereces!
           </h3>
           <div class="space-y-6 mr-0 md:mr-10">
-            <p class="text-grey-dark dark:text-grey-light">
-              Contáctanos para discutir las necesidades de tu empresa.
-              Llámanos o envíanos un correo electrónico.
+            <p class="text-grey-dark dark:text-grey-light text-justify">
+              Contáctanos y hablemos sobre las necesidades específicas de tu empresa. Ya sea que prefieras una llamada
+              telefónica o un correo electrónico, estamos aquí para atenderte.
             </p>
           </div>
           <div class="info-wrapper mt-4 md:mt-8 flex flex-col gap-2">
             <NuxtLink
               class="text-white dark:text-primary inline-block transition-colors duration-300 ease-in-out hover:text-orange-2 dark:hover:text-orange-2 link"
               to="https://goo.gl/maps/ZLFn7Lky1ibCvw63A" target="_blank">
-              Serrano #264 of. 216 Melipilla, Chile.
+              Ubicados en Serrano #264 of. 216 Melipilla, Chile.
             </NuxtLink>
             <NuxtLink
               class="text-white dark:text-primary transition-colors duration-300 ease-in-out hover:text-orange-2 dark:hover:text-orange-2 link"
               to="https://wa.link/4k6yh3" target="_blank">
-              +56 9 9251 9913
+              Llamanos al +56 9 9251 9913
             </NuxtLink>
             <NuxtLink
               class="text-white dark:text-primary transition-colors duration-300 ease-in-out hover:text-orange-2 dark:hover:text-orange-2 link"
               to="mailto:info@global3.cl">
-              info@global3.cl
+              O escríbenos a info@global3.cl
             </NuxtLink>
           </div>
           <div class="flex gap-2 mt-4 md:mt-8">

@@ -17,10 +17,10 @@
           </h3>
           <div class="space-y-6 mr-0 md:mr-10">
             <p class="text-grey-dark dark:text-grey-light">
-              Nuestro equipo de soporte está disponible para su atención a
-              través de 3 plataformas. Todos nuestros proyectos son entregados
-              con documentación digital e impresa para la autoadministración de
-              los sitios.
+              Nuestro equipo de soporte está disponible para atender tus necesidades en cualquiera de nuestras tres
+              plataformas de contacto: teléfono, WhatsApp y correo electrónico. Además, todos nuestros proyectos incluyen
+              documentación tanto digital como impresa para que puedas autoadministrarte y gestionar los diferentes
+              desarrollos.
             </p>
           </div>
         </div>

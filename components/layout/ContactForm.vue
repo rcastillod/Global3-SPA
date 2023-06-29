@@ -41,7 +41,7 @@ const formSuccess = ref(false)
       </h3>
       <p class="text-grey-dark dark:text-grey-light text-sm">
         Tu dirección de correo electrónico no será publicada. Los campos
-        obligatorios están marcados *
+        obligatorios están marcados con <span class="text-orange-1">*</span>
       </p>
     </div>
     <VForm class="flex flex-col space-y-8 mt-10" :initial-values="initialValues"
