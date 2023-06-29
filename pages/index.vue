@@ -12,44 +12,30 @@
     <section class="w-full">
       <LayoutSiteSection subtitle="Que es lo que ofrecemos">
         <LayoutServicesTitle :services="storeServices.services" />
-        <div
-          class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-14 mt-14 md:mt-36"
-        >
-          <LayoutServiceCard
-            v-for="(service, index) in storeServices.services"
-            :key="index"
-            :service="service"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            :data-aos-delay="`${index}00`"
-          />
+        <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-14 mt-14 md:mt-36">
+          <LayoutServiceCard v-for="(service, index) in storeServices.services" :key="index" :service="service"
+            data-aos="fade-up" data-aos-duration="1000" :data-aos-delay="`${index}00`" />
         </div>
       </LayoutSiteSection>
     </section>
     <!-- Text Marquee -->
     <section class="w-full">
-      <ElementsTextMarquee
-        :texts="['Soluciones', 'Digitalización', 'Trabajo en Equipo']"
-      />
+      <ElementsTextMarquee :texts="['Soluciones', 'Digitalización', 'Trabajo en Equipo']" />
     </section>
     <!-- Proyects -->
-    <section
-      class="bg-grayscale w-full bg-[url('/bg-proyects.jpg')] bg-cover bg-no-repeat bg-center"
-    >
+    <section class="bg-grayscale w-full bg-[url('/bg-proyects.jpg')] bg-cover bg-no-repeat bg-center">
       <LayoutSiteSection class="flex justify-center md:justify-start">
-        <ElementsButtonTextAnim
-          text="Ver Proyectos  Ver Proyectos  Ver Proyectos"
-        />
+        <ElementsButtonTextAnim text="Ver Proyectos  Ver Proyectos  Ver Proyectos" />
       </LayoutSiteSection>
     </section>
     <!-- Testimonials -->
-    <section class="w-full">
+    <!-- <section class="w-full">
       <LayoutSiteSection>
         <LayoutTestimonials data-aos="fade-up" data-aos-duration="1000" />
       </LayoutSiteSection>
-    </section>
+    </section> -->
     <!-- Business -->
-    <section class="w-full">
+    <section class="w-full mt-10">
       <p class="text-grey-dark dark:text-grey-light text-xl text-center">
         Hemos trabajado con
       </p>

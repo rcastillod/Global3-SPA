@@ -44,7 +44,7 @@ onMounted(() => {
         </div>
       </div>
       <div class="card-description">
-        <p class="text-grey-dark dark:text-grey-light">
+        <p class="text-grey-dark dark:text-grey-light text-justify">
           {{ description == true ? service.content : service.excerpt }}
         </p>
       </div>

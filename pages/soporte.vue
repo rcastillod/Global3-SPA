@@ -16,7 +16,7 @@
             Soporte Online y Presencial
           </h3>
           <div class="space-y-6 mr-0 md:mr-10">
-            <p class="text-grey-dark dark:text-grey-light">
+            <p class="text-grey-dark dark:text-grey-light text-justify">
               Nuestro equipo de soporte está disponible para atender tus necesidades en cualquiera de nuestras tres
               plataformas de contacto: teléfono, WhatsApp y correo electrónico. Además, todos nuestros proyectos incluyen
               documentación tanto digital como impresa para que puedas autoadministrarte y gestionar los diferentes
